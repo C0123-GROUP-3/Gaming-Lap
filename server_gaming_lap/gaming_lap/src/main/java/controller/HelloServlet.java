@@ -1,11 +1,14 @@
-package com.example.gaming_lap;
+package controller;
 
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+
+@WebServlet(name = "helloServlet", value = "/helloServlet")
 public class HelloServlet extends HttpServlet {
     private String message;
 
