@@ -29,11 +29,18 @@
         rel="stylesheet"
 />
 </head>
+<style>
+    .img-product{
+        width: 100px;
+        height: 100px;
+    }
+</style>
 <body>
+
 <jsp:include page="header_admin.jsp"></jsp:include>
 
 
-<nav class="navbar navbar-light bg-light" style="height: 80px; border: 1px solid #DDDDDD">
+<nav class="navbar navbar-light bg-light" style="position: sticky; top: 0; height: 80px; border: 1px solid #DDDDDD">
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
@@ -53,9 +60,38 @@
 
     </div>
 </nav>
+
 <h1 style="text-align: center;">Product Management</h1>
 
-// table o day
+<table id="table-product" class="table table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Brand</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="product" items="${productList}" varStatus="status">
+        <tr>
+            <td>${status.count}</td>
+            <td>${product.id}</td>
+            <td>${product.name}</td>
+            <td>${product.price}</td>
+            <td>${product.brand}</td>
+            <td><img class="img-product" src="${product.image}" alt=""></td>
+            <th>
+                <button onclick="window.location.href = '/ProductServlet?action=edit'" class="btn btn-secondary">Edit</button>
+                <button onclick="window.location.href = '/ProductServlet?action=delete'" class="btn btn-secondary">Delete</button>
+            </th>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 
 <jsp:include page="footer_admin.jsp"></jsp:include>
 </body>

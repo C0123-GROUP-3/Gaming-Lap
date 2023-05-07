@@ -1,4 +1,18 @@
 package service.impl;
 
-public class ProductService {
+import model.Product;
+import repository.IProductRepository;
+import repository.impl.ProductRepository;
+import service.IProductService;
+
+import java.util.List;
+
+public class ProductService implements IProductService {
+    IProductRepository productRepository = new ProductRepository();
+
+    @Override
+    public List<Product> getList() {
+        return productRepository.getList();
+
+    }
 }
