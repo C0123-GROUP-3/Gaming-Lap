@@ -6,22 +6,21 @@ public class Customer {
     private String phone;
     private String address;
     private String email;
-    private  String user;
-    private String pass;
+    private int accountId;
+    private String create_time;
+    private  String update_time;
+    private  Login login;
 
-    public Customer(String user, String pass) {
-        this.user = user;
-        this.pass = pass;
-    }
 
-    public Customer(int id, String name, String phone, String address, String email, String user, String pass) {
+
+    public Customer(int id, String name, String phone, String address, String email, String create_time, String update_time) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.email = email;
-        this.user = user;
-        this.pass = pass;
+        this.create_time = create_time;
+        this.update_time = update_time;
     }
 
     public Customer(int id, String name, String phone, String address, String email) {
@@ -32,29 +31,43 @@ public class Customer {
         this.email = email;
     }
 
-    public Customer(String name, String phone, String address, String email, String user, String pass) {
+    public Customer(String name, String phone, String address, String email) {
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.email = email;
-        this.user = user;
-        this.pass = pass;
     }
 
-    public String getUser() {
-        return user;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
-    public String getPass() {
-        return pass;
+    public Login getLogin() {
+        return login;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
+
+    public String getUpdate_time() {
+        return update_time;
+    }
+
+    public void setUpdate_time(String update_time) {
+        this.update_time = update_time;
     }
 
     public int getId() {
