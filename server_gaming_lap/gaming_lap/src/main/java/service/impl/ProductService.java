@@ -15,4 +15,19 @@ public class ProductService implements IProductService {
         return productRepository.getList();
 
     }
+
+    @Override
+    public boolean deleteProduct(String id) {
+        return productRepository.deleteProduct(id);
+    }
+
+    @Override
+    public boolean saveProduct(Product product) {
+        return productRepository.saveProduct(product);
+    }
+
+    @Override
+    public boolean editProduct(Product product) {
+        return productRepository.editProduct(product);
+    }
 }

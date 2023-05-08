@@ -10,6 +10,6 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="/ProductServlet">Hello Servlet</a>
+<a href="/Product">Hello Servlet</a>
 </body>
 </html>

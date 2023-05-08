@@ -37,14 +37,14 @@
 </style>
 <body>
 
-<jsp:include page="header_admin.jsp"></jsp:include>
+<jsp:include page="../header_admin.jsp"></jsp:include>
 
 
 <nav class="navbar navbar-light bg-light" style="position: sticky; top: 0; height: 80px; border: 1px solid #DDDDDD">
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn" style="border: 1px solid #DDDDDD" onclick="window.location.href='/user?action=create'">Add Product</button>
+                <button class="btn" style="border: 1px solid #DDDDDD" onclick="window.location.href='/Product?action=create'">Add Product</button>
             </div>
             <form action="/user?action=sort" method="post" style="margin-left: 20px">
                 <button class="btn"  style="border: 1px solid #DDDDDD" type="submit">Sort By Price</button>
@@ -85,15 +85,47 @@
             <td>${product.brand}</td>
             <td><img class="img-product" src="${product.image}" alt=""></td>
             <th>
-                <button onclick="window.location.href = '/ProductServlet?action=edit'" class="btn btn-secondary">Edit</button>
-                <button onclick="window.location.href = '/ProductServlet?action=delete'" class="btn btn-secondary">Delete</button>
+                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-secondary">Edit</button>
+                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete
+                </button>
             </th>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 
-<jsp:include page="footer_admin.jsp"></jsp:include>
+
+<jsp:include page="../footer_admin.jsp"></jsp:include>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/Product?action=delete" method="post">
+                                <div class="modal-body">
+                                    <input  hidden id="deleteId" name="deleteId">
+                                    <span>Are you sure to delete </span> <span style="color: red" id="deleteName"></span> <span>?</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Delete</button>
+                                </div>
+                            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function inforDelete(id,name){
+
+        document.getElementById("deleteId").value=id;
+        document.getElementById("deleteName").innerText=name;
+    }
+</script>
 </body>
 </html>
 <!-- MDB -->
