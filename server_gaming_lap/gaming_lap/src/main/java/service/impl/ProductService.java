@@ -1,6 +1,7 @@
 package service.impl;
 
 import model.Product;
+import model.TypeProduct;
 import repository.IProductRepository;
 import repository.impl.ProductRepository;
 import service.IProductService;
@@ -29,5 +30,20 @@ public class ProductService implements IProductService {
     @Override
     public boolean editProduct(Product product) {
         return productRepository.editProduct(product);
+    }
+
+    @Override
+    public List<Product> searchList(String search) {
+        return productRepository.searchList(search);
+    }
+
+    @Override
+    public List<Product> getListSortByPrice() {
+        return productRepository.getListSortByPrice();
+    }
+
+    @Override
+    public List<TypeProduct> getTypeProductList() {
+        return productRepository.getTypeProductList();
     }
 }

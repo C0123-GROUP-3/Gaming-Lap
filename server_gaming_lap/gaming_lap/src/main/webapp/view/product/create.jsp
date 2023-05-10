@@ -36,7 +36,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <body>
-<div class="col-12"><jsp:include page="../header_admin.jsp"></jsp:include></div>
+<div class="col-12"><jsp:include page="../../header_admin.jsp"></jsp:include></div>
 
 <h1 style="text-align: center;margin-top:50px ">GAMING LAP MANAGEMENT</h1>
 <h3 style="text-align: center;margin-top:50px ">Add New Product</h3>
@@ -44,24 +44,30 @@
 <div class="col-lg-8 col-sm-10 " id="add">
     <form action="/Product?action=create" method="post" class="text_left">
         <div class="form-outline mb-4">
-            <input name="id" type="text" id="form6Example3" class="form-control" required/>
-            <label class="form-label" for="form6Example3">Product ID</label>
+            <input name="name" type="text" id="form6Example3" class="form-control" required/>
+            <label class="form-label" for="form6Example3">Product Name</label>
         </div>
         <div class="form-outline mb-4">
-            <input name="name" type="text" id="form6Example4" class="form-control" required/>
-            <label class="form-label" for="form6Example4">Product Name</label>
+            <input name="price" type="number" id="form6Example4" class="form-control" required/>
+            <label class="form-label" for="form6Example4">Product Price</label>
         </div>
         <div class="form-outline mb-4">
-            <input name="price" type="number" id="form6Example5" class="form-control" />
-            <label class="form-label" for="form6Example5">Price</label>
+            <input name="brand" type="text" id="form6Example5" class="form-control" required />
+            <label class="form-label" for="form6Example5">Brand of Product</label>
         </div>
         <div class="form-outline mb-4">
-            <input name="brand" type="text" id="form6Example6" class="form-control" required/>
-            <label class="form-label" for="form6Example6">Brand</label>
+            <input name="image" type="text" id="form6Example6" class="form-control" required/>
+            <label class="form-label" for="form6Example6">Image URL </label>
         </div>
         <div class="form-outline mb-4">
-            <input name="image" type="text" class="form-control" />
-            <label class="form-label">Image URL </label>
+
+            <select name="typeProduct" class="form-select form-control" aria-label="Default select example" required>
+                <option selected>Select type of product</option>
+                <c:forEach var="type" items="${typeProductList}">
+                    <option value="${type.typeId}">${type.typeName}</option>
+                </c:forEach>
+            </select>
+
         </div>
         <div class="form-outline mb-4">
             <textarea name="description" class="form-control" id="form6Example7" rows="4"></textarea>
@@ -84,7 +90,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-<jsp:include page="../footer_admin.jsp"></jsp:include>
+<jsp:include page="../../footer_admin.jsp"></jsp:include>
 
 </body>
 </html>

@@ -30,14 +30,14 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:include page="../header_admin.jsp"></jsp:include>
+<jsp:include page="../../header_admin.jsp"></jsp:include>
 
 
 
 
 
 
-<jsp:include page="../footer_admin.jsp"></jsp:include>
+<jsp:include page="../../footer_admin.jsp"></jsp:include>
 </body>
 </html>
 <!-- MDB -->

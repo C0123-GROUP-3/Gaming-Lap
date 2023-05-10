@@ -10,7 +10,8 @@
 <html>
 <head>
     <title>Product List</title>
-
+    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <!-- Font Awesome -->
@@ -37,7 +38,7 @@
 </style>
 <body>
 
-<jsp:include page="../header_admin.jsp"></jsp:include>
+<jsp:include page="../../header_admin.jsp"></jsp:include>
 
 
 <nav class="navbar navbar-light bg-light" style="position: sticky; top: 0; height: 80px; border: 1px solid #DDDDDD">
@@ -46,15 +47,15 @@
             <div>
                 <button class="btn" style="border: 1px solid #DDDDDD" onclick="window.location.href='/Product?action=create'">Add Product</button>
             </div>
-            <form action="/user?action=sort" method="post" style="margin-left: 20px">
+            <form action="/Product?action=sortByPrice" method="post" style="margin-left: 20px">
                 <button class="btn"  style="border: 1px solid #DDDDDD" type="submit">Sort By Price</button>
             </form>
 
         </div>
-        <form class="d-flex" action="/user?action=search" method="post">
-            <input type="text" name="action" value="search" hidden>
-            <input style="width: 30vw" class="form-control me-2" type="search" name="phone" value="${phone}"
-                   placeholder="Search by brand" aria-label="Search">
+        <form class="d-flex" action="/Product?action=search" method="post">
+
+            <input style="width: 30vw" class="form-control me-2" type="text" name="search"
+                   placeholder="Search" aria-label="Search" value="${search}">
             <button class="btn btn-secondary" type="submit">Search</button>
         </form>
 
@@ -63,7 +64,7 @@
 
 <h1 style="text-align: center;">Product Management</h1>
 
-<table id="table-product" class="table table-striped">
+<table id="tableProduct" class="table table-striped">
     <thead>
     <tr>
         <th>#</th>
@@ -71,6 +72,9 @@
         <th>Name</th>
         <th>Price</th>
         <th>Brand</th>
+        <th>Create time</th>
+        <th>Update time</th>
+        <th>Type of product</th>
         <th>Image</th>
         <th>Action</th>
     </tr>
@@ -83,6 +87,9 @@
             <td>${product.name}</td>
             <td>${product.price}</td>
             <td>${product.brand}</td>
+            <td>${product.createTime}</td>
+            <td>${product.updateTime}</td>
+            <td>${product.typeProduct.typeName}</td>
             <td><img class="img-product" src="${product.image}" alt=""></td>
             <th>
                 <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-secondary">Edit</button>
@@ -96,7 +103,7 @@
 </table>
 
 
-<jsp:include page="../footer_admin.jsp"></jsp:include>
+<jsp:include page="../../footer_admin.jsp"></jsp:include>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -138,3 +145,15 @@
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
 
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tableProduct').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+</script>

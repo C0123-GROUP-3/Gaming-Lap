@@ -46,7 +46,7 @@
     }
 </style>
 <body>
-<jsp:include page="../header_admin.jsp"></jsp:include>
+<jsp:include page="../../header_admin.jsp"></jsp:include>
 
 
 
@@ -55,25 +55,34 @@
 <div class="col-lg-2 col-sm-1"></div>
 <div class="col-lg-8 col-sm-10 " id="add">
     <form action="/Product?action=edit" method="post" class="text_left">
-        <div class="form-outline mb-4">
-            <input value="${id}" name="id" type="text" id="form6Example3" class="form-control" required/>
-            <label class="form-label" for="form6Example3">Product ID</label>
+        <div hidden class="form-outline mb-4">
+            <input value="${id}" name="id" type="text" id="form6Example" class="form-control" required/>
+            <label class="form-label" for="form6Example">ID</label>
         </div>
         <div class="form-outline mb-4">
-            <input value="${name}" name="name" type="text" id="form6Example4" class="form-control" required/>
-            <label class="form-label" for="form6Example4">Product Name</label>
+            <input value="${name}" name="name" type="text" id="form6Example3" class="form-control" required/>
+            <label class="form-label" for="form6Example3">Product Name</label>
         </div>
         <div class="form-outline mb-4">
-            <input value="${price}" name="price" type="number" id="form6Example5" class="form-control" />
-            <label class="form-label" for="form6Example5">Price</label>
+            <input value="${price}" name="price" type="number" id="form6Example4" class="form-control" required/>
+            <label class="form-label" for="form6Example4">Product Price</label>
         </div>
         <div class="form-outline mb-4">
-            <input value="${brand}" name="brand" type="text" id="form6Example6" class="form-control" required/>
-            <label class="form-label" for="form6Example6">Brand</label>
+            <input value="${brand}" name="brand" type="text" id="form6Example5" class="form-control" required />
+            <label class="form-label" for="form6Example5">Brand of Product</label>
         </div>
         <div class="form-outline mb-4">
-            <input value="${image}" name="image" type="text" class="form-control" />
-            <label class="form-label">Image URL </label>
+            <input value="${image}" name="image" type="text" id="form6Example6" class="form-control" required/>
+            <label class="form-label" for="form6Example6">Image URL </label>
+        </div>
+        <div class="form-outline mb-4">
+
+            <select name="typeProduct" class="form-select form-control" aria-label="Default select example" required>
+                <option value="${typeProduct.typeId}" selected>${typeProduct.typeName}</option>
+                <c:forEach var="type" items="${typeProductList}">
+                    <option value="${type.typeId}">${type.typeName}</option>
+                </c:forEach>
+            </select>
         </div>
         <div class="form-outline mb-4">
             <textarea  name="description" class="form-control" id="form6Example7" rows="4">${description}</textarea>
@@ -99,7 +108,7 @@
 
 
 
-<jsp:include page="../footer_admin.jsp"></jsp:include>
+<jsp:include page="../../footer_admin.jsp"></jsp:include>
 </body>
 </html>
 <!-- MDB -->
