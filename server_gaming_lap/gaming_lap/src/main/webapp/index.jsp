@@ -1,4 +1,4 @@
-<%@ page import="model.Login" %>
+<%@ page import="model.Account" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +51,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false" >
                             <div class="ml-5">
                             <span class=" text-white">
-                                 <%=session.getAttribute("user") != null ? ((Login) session.getAttribute("user")).getUser() :""%>
+                                 <%=session.getAttribute("user") != null ? ((Account) session.getAttribute("user")).getUser() :""%>
                             </span>
                             </div>
                         </button>

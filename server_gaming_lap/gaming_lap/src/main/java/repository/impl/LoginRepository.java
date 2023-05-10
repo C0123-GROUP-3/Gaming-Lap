@@ -1,7 +1,6 @@
 package repository.impl;
 
-import model.Customer;
-import model.Login;
+import model.Account;
 import repository.ILoginRepository;
 
 import java.sql.Connection;
@@ -19,8 +18,8 @@ public class LoginRepository implements ILoginRepository {
     private static final String CHECK_LOGIN = "SELECT * FROM `account`  WHERE user =?";
     private static final String EDIT_LOGIN = "UPDATE account SET user=?,pass=? WHERE id=?;";
     @Override
-    public List<Login> getAll() {
-        List<Login> loginList = new ArrayList<>();
+    public List<Account> getAll() {
+        List<Account> loginList = new ArrayList<>();
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FORM_LOGIN);
@@ -29,7 +28,7 @@ public class LoginRepository implements ILoginRepository {
                 int id = resultSet.getInt("id");
                 String user = resultSet.getString("user");
                 String pass = resultSet.getString("pass");
-                Login login=new Login(id,user,pass);
+                Account login=new Account(id,user,pass);
                 loginList.add(login);
             }
         } catch (SQLException e) {
@@ -39,7 +38,7 @@ public class LoginRepository implements ILoginRepository {
     }
 
     @Override
-    public boolean saveLogin(Login login) {
+    public boolean saveLogin(Account login) {
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_LOGIN);
@@ -52,7 +51,7 @@ public class LoginRepository implements ILoginRepository {
         return false;
     }
 
-    public Login checkLogin(String user, String pass) {
+    public Account checkLogin(String user, String pass) {
         Connection connection = BaseRepository.getConnectDB();
 //        List<Login> loginList = getAll();
 //        for (Login l:loginList) {
@@ -67,7 +66,7 @@ public class LoginRepository implements ILoginRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
 //            trả về nhiều nhất 1 bản ghi
             if (resultSet.next()) {
-                return new Login(resultSet.getString(2),resultSet.getString(3));
+                return new Account(resultSet.getString(2),resultSet.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -76,7 +75,7 @@ public class LoginRepository implements ILoginRepository {
     }
 
     @Override
-    public Login checkLoginExit(String user) {
+    public Account checkLoginExit(String user) {
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(CHECK_LOGIN);
@@ -84,7 +83,7 @@ public class LoginRepository implements ILoginRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
 //            trả về nhiều nhất 1 bản ghi
             if (resultSet.next()) {
-                return new Login(resultSet.getString(2));
+                return new Account(resultSet.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,7 +92,7 @@ public class LoginRepository implements ILoginRepository {
     }
 
     @Override
-    public boolean editLogin(Login login) {
+    public boolean editLogin(Account login) {
         Connection connection=BaseRepository.getConnectDB();
         try {
             PreparedStatement preparedStatement=connection.prepareStatement(EDIT_LOGIN);

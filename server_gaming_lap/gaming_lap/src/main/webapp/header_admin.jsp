@@ -1,4 +1,4 @@
-<%@ page import="model.Login" %><%--
+<%@ page import="model.Account" %><%--
   Created by IntelliJ IDEA.
   User: uthoa
   Date: 05/06/23
@@ -51,7 +51,7 @@
                 </ul>
                 <div class="ml-5">
                         <span class=" text-white">
-                            <%=session.getAttribute("user") != null ? ((Login) session.getAttribute("user")).getUser() : ""%>
+                            <%=session.getAttribute("user") != null ? ((Account) session.getAttribute("user")).getUser() : ""%>
                         </span>
                     <div class="dropdown" >
                         <button style="color: white; font-size: 15px;margin-left: -50% " type="button" class="btn  "

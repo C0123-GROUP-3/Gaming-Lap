@@ -1,15 +1,14 @@
 package service;
 
-import model.Customer;
-import model.Login;
+import model.Account;
 
 import java.util.List;
 
 public interface ILoginService {
-    List<Login> getAll();
-    boolean saveLogin(Login login);
-    Login checkLogin(String user, String pass);
-    Login checkLoginExit(String user);
-    boolean editLogin ( Login login );
+    List<Account> getAll();
+    boolean saveLogin(Account login);
+    Account checkLogin(String user, String pass);
+    Account checkLoginExit(String user);
+    boolean editLogin ( Account login );
 
 }

@@ -1,7 +1,6 @@
 package service.impl;
 
-import model.Customer;
-import model.Login;
+import model.Account;
 import repository.ILoginRepository;
 import repository.impl.LoginRepository;
 import service.ILoginService;
@@ -11,8 +10,8 @@ import java.util.List;
 public class LoginService implements ILoginService {
     private static    ILoginRepository iLoginRepository=new LoginRepository();
     @Override
-    public List<Login> getAll() {
-        List<Login> loginList=iLoginRepository.getAll();
+    public List<Account> getAll() {
+        List<Account> loginList=iLoginRepository.getAll();
         if (loginList.size()==0){
             System.out.println("NO");
             return null;
@@ -21,22 +20,22 @@ public class LoginService implements ILoginService {
     }
 
     @Override
-    public boolean saveLogin(Login login) {
+    public boolean saveLogin(Account login) {
         return iLoginRepository.saveLogin(login);
     }
 
     @Override
-    public Login checkLogin(String user, String pass) {
+    public Account checkLogin(String user, String pass) {
         return iLoginRepository.checkLogin(user, pass);
     }
 
     @Override
-    public Login checkLoginExit(String user) {
+    public Account checkLoginExit(String user) {
         return iLoginRepository.checkLoginExit(user);
     }
 
     @Override
-    public boolean editLogin(Login login) {
+    public boolean editLogin(Account login) {
         return false;
     }
 }

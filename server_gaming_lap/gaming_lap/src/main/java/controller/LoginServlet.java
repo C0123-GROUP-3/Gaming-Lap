@@ -1,12 +1,7 @@
 package controller;
 
-import model.Customer;
-import model.Login;
-import repository.ICustomerRepository;
-import repository.impl.CustomerRepository;
-import service.ICustomerService;
+import model.Account;
 import service.ILoginService;
-import service.impl.CustomerService;
 import service.impl.LoginService;
 
 import javax.servlet.*;
@@ -56,7 +51,7 @@ public class LoginServlet extends HttpServlet {
     private static void getLoginCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        Login login = iLoginService.checkLogin(user, pass);
+        Account login = iLoginService.checkLogin(user, pass);
         if (login == null) {
             request.setAttribute("error", "Incorrect Account or Password ?");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
@@ -75,7 +70,7 @@ public class LoginServlet extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         String re_pass = request.getParameter("repass");
-        Login login = new Login(user, pass);
+        Account login = new Account(user, pass);
         boolean checkSign = iLoginService.saveLogin(login);
 
         if (!pass.equals(re_pass)) {
