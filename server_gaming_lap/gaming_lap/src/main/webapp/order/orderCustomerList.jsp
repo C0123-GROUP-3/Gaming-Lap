@@ -67,8 +67,8 @@
             <td>${customerList.getPhone()}</td>
             <td>${customerList.getAddress()}</td>
             <td>${customerList.getEmail()}</td>
-            <td>${customerList.getCreate_time()}</td>
-            <td>${customerList.getUpdate_time()}</td>
+            <td>${customerList.getCreateTime()}</td>
+            <td>${customerList.getUpdateTime()}</td>
             <td colspan="1">
                 <form action="/OrderServlet?action=create&id=${customerList.id}" method="post">
                     <button type="submit" class="btn btn-secondary">
