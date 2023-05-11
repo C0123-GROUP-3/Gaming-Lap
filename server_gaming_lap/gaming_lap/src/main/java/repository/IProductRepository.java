@@ -1,11 +1,11 @@
-package service;
+package repository;
 
 import model.Product;
 import model.TypeProduct;
 
 import java.util.List;
 
-public interface IProductService {
+public interface IProductRepository {
     List<Product> getList();
 
     boolean deleteProduct(int id);
