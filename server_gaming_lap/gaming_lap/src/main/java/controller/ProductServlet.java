@@ -2,8 +2,8 @@ package controller;
 
 import model.Product;
 import model.TypeProduct;
-import service.IProductService;
-import service.impl.ProductService;
+import service.product.IProductService;
+import service.product.impl.ProductService;
 
 
 import javax.servlet.*;
@@ -15,8 +15,8 @@ import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/Product")
 public class ProductServlet extends HttpServlet {
-   private static IProductService productService = new ProductService();
-  private   static List<TypeProduct> typeProductList = productService.getTypeProductList();
+      private static IProductService productService = new ProductService();
+    private static List<TypeProduct> typeProductList = productService.getTypeProductList();
 
 
     @Override
@@ -53,12 +53,33 @@ public class ProductServlet extends HttpServlet {
                     }
                 }
                 break;
-            case "search":
+            case "laptopList":
+                List<Product> laptopList = productService.laptopList();
+                request.setAttribute("allProductList",laptopList);
+                request.getRequestDispatcher("/view/product/allProductList.jsp").forward(request,response);
                 break;
-            case "sortByPrice":
-
+            case "keyboardList":
+                List<Product> keyboardList = productService.getKeyboardList();
+                request.setAttribute("allProductList",keyboardList);
+                request.getRequestDispatcher("/view/product/allProductList.jsp").forward(request,response);
+                break;
+            case "headphoneList":
+                List<Product> headphoneList = productService.headphoneList();
+                request.setAttribute("allProductList",headphoneList);
+                request.getRequestDispatcher("/view/product/allProductList.jsp").forward(request,response);
+                break;
+            case "mouseList":
+                List<Product> mouseList = productService.mouseList();
+                request.setAttribute("allProductList",mouseList);
+                request.getRequestDispatcher("/view/product/allProductList.jsp").forward(request,response);
+                break;
+            case "allProductList":
+                List<Product> allProductList = productService.getList();
+                request.setAttribute("allProductList",allProductList);
+                request.getRequestDispatcher("/view/product/allProductList.jsp").forward(request,response);
                 break;
             default:
+
                 showList(productService.getList(), request, response);
         }
 
@@ -104,7 +125,7 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 int id = Integer.parseInt(request.getParameter("deleteId"));
                 productService.deleteProduct(id);
-                request.getRequestDispatcher("/view/product/productList.jsp");
+                request.getRequestDispatcher("/view/product/productList.jsp").forward(request,response);
                 break;
             case "edit":
                 editProductPost(request, response);

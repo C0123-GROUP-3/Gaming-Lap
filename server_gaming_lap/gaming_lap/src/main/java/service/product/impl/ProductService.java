@@ -1,10 +1,11 @@
-package service.impl;
+package service.product.impl;
 
 import model.Product;
 import model.TypeProduct;
 import repository.IProductRepository;
 import repository.impl.ProductRepository;
-import service.IProductService;
+import service.product.IProductService;
+
 
 import java.util.List;
 
@@ -45,5 +46,25 @@ public class ProductService implements IProductService {
     @Override
     public List<TypeProduct> getTypeProductList() {
         return productRepository.getTypeProductList();
+    }
+
+    @Override
+    public List<Product> getKeyboardList() {
+        return productRepository.keyboardList();
+    }
+
+    @Override
+    public List<Product> laptopList() {
+        return productRepository.laptopList();
+    }
+
+    @Override
+    public List<Product> headphoneList() {
+        return productRepository.headphoneList();
+    }
+
+    @Override
+    public List<Product> mouseList() {
+        return productRepository.mouseList();
     }
 }

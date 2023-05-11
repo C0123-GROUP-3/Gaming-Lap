@@ -20,9 +20,9 @@
 </head>
 <body>
 <div>
-<jsp:include page="/header_home.jsp"></jsp:include>
-<div style="    z-index: -1">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style=" ;
+    <jsp:include page="/header_home.jsp"></jsp:include>
+    <div style="    z-index: -1">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style=" ;
              transition: background-color 0.2s">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -122,26 +122,26 @@
             </div>
         </div>
     </div>
-<%--    <div class="row">--%>
-<%--        <div class="col-sm-6">--%>
-<%--            <div class="card">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h5 class="card-title">Special title treatment</h5>--%>
-<%--                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--%>
-<%--                    <a href="#" class="btn btn-primary">Go somewhere</a>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="col-sm-6">--%>
-<%--            <div class="card">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h5 class="card-title">Special title treatment</h5>--%>
-<%--                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--%>
-<%--                    <a href="#" class="btn btn-primary">Go somewhere</a>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div>
         <div style="display: flex;margin-top: 20px">
             <div class="card bg-dark text-white" style="border: none;">

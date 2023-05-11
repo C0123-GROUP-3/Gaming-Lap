@@ -27,7 +27,7 @@
 <header>
     <nav style="background-color: black" class="navbar navbar-expand-lg navbar-dark ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img style="height: 70px" width="55px"
+            <a class="navbar-brand" href="/index.jsp"><img style="height: 70px" width="55px"
                                                   src="https://www.nicepng.com/png/full/187-1876780_alienware-icon-rtm-notebookreview-alienware-start-button-png.png"
                                                   class="rounded mx-auto d-block" alt="..."></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -43,7 +43,7 @@
                         <a class="nav-link" href="/Product">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
+                        <a class="nav-link" href="/OrderServlet">Orders</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/customer">Customers</a>

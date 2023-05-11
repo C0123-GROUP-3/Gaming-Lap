@@ -105,7 +105,7 @@
             <td>${product.updateTime}</td>
             <td>${product.typeProduct.typeName}</td>
             <td><img class="img-product" src="${product.image}" alt=""></td>
-            <th colspan="2" style="flex: ">
+            <th colspan="2" style="display: flex ">
                 <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-primary">Edit</button>
                 <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Delete

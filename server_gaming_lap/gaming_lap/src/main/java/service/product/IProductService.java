@@ -1,4 +1,4 @@
-package service;
+package service.product;
 
 import model.Product;
 import model.TypeProduct;
@@ -19,4 +19,12 @@ public interface IProductService {
     List<Product> getListSortByPrice();
 
     List<TypeProduct> getTypeProductList();
+
+    List<Product> getKeyboardList();
+
+    List<Product> laptopList();
+
+    List<Product> headphoneList();
+
+    List<Product> mouseList();
 }

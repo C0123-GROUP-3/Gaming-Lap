@@ -37,6 +37,11 @@ public class Customer {
         this.address = address;
         this.email = email;
     }
+    public Customer(int id, String name, String phone) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+    }
 
     public int getAccountId() {
         return accountId;
