@@ -1,7 +1,7 @@
 package config;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,7 +19,7 @@ public class FilterUTF8 implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         HttpServletRequest req = (HttpServletRequest) request;
-//        Lấy đường dẫn truy cập để phân quyền truy ccaapj
+//        Lấy đường dẫn truy cập để phân quyền
         String uri = ((HttpServletRequest) request).getRequestURI();
         HttpServletResponse resp = (HttpServletResponse) response;
         HttpSession session = req.getSession();
