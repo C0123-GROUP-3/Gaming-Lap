@@ -17,18 +17,18 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        tạo cookie để liên kết với các miền ?
-        Cookie[]cookies=request.getCookies();
-        if (cookies!=null){
-            for (Cookie c:cookies){
-                if (c.getName().equals("cookieUser")){
-                    request.setAttribute("user",c.getName());
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie c : cookies) {
+                if (c.getName().equals("cookieUser")) {
+                    request.setAttribute("user", c.getName());
                 }
-                if (c.getName().equals("cookiePass")){
-                    request.setAttribute("pass",c.getName());
+                if (c.getName().equals("cookiePass")) {
+                    request.setAttribute("pass", c.getName());
                 }
             }
         }
-        request.getRequestDispatcher("/login.jsp").forward(request,response);
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
 
     }
 
@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
     private static void getLoginCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        boolean memorize= Boolean.parseBoolean(request.getParameter("memorize"));
+        boolean memorize = Boolean.parseBoolean(request.getParameter("memorize"));
         Account login = iLoginService.checkLogin(user, pass);
 
 
@@ -82,9 +82,8 @@ public class LoginServlet extends HttpServlet {
                 cookie1.setMaxAge(300);
                 response.addCookie(cookie);
                 response.addCookie(cookie1);
-        }
-        }
-        else {
+            }
+        } else {
             request.setAttribute("error", "Incorrect Account or Password ?");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
@@ -95,9 +94,9 @@ public class LoginServlet extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         String re_pass = request.getParameter("repass");
-        String roleName=request.getParameter("role");
-        Role role=new Role(roleName);
-        Account login= new Account(user, pass);
+        String roleName = request.getParameter("role");
+        Role role = new Role(roleName);
+        Account login = new Account(user, pass);
         boolean checkSign = iLoginService.saveLogin(login);
 
         if (!pass.equals(re_pass)) {
