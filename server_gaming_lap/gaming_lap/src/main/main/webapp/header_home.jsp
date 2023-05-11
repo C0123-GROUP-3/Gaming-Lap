@@ -24,7 +24,7 @@
           rel="stylesheet"/>
     <link rel="stylesheet" href="dropdown.css">
 </head>
-<header>
+<header style="position: fixed;top:0;left: 0;right: 0;z-index: 2; ">
     <nav style="background-color: black" class="navbar navbar-expand-lg navbar-dark ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img style="height: 70px" width="55px"
@@ -37,16 +37,16 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Gaming Lap Management</a>
+                        <a class="nav-link active" aria-current="page" href="#">Gaming Lap</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Product">Products</a>
+                        <a class="nav-link" href="#">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
+                        <a class="nav-link" href="#">Deals</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/customer">Customers</a>
+                        <a class="nav-link" href="#">Support</a>
                     </li>
                 </ul>
 
@@ -59,15 +59,26 @@
                             </span>
                         </div>
                     </button>
-                    <div class="dropdown-content" style="margin-left: -90%">
+                    <div class="dropdown-content" style="margin-left: -40%">
                         <a class="dropdown-item" href="" style="font-size: 20px">
                             <i class="fa-solid fa-user fa-beat-fade"></i> My Account</a>
                         <%=session.getAttribute("user") == null ?(""):("<a href='/logout'><i class=\"fa-solid fa-right-from-bracket fa-beat-fade\"></i> Log out</a>")%>
                     </div>
                 </div>
-
-
             </div>
+            <span class="text-white">
+                                            <%=session.getAttribute("user") == null ? (" <div class=\"dropdown\">\n" +
+                                                    "                        <button style=\"color: white; font-size: 15px\" type=\"button\" class=\"btn  \" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\n" +
+                                                    "                         LOGIN / SIGN IN </button>\n" +
+                                                    "                        <div class=\"dropdown-content\" >\n" +
+                                                    "                            <a class=\"dropdown-item\" href=\"/login.jsp\" style=\"font-size: 20px\">\n" +
+                                                    "                                <i class=\"fa-solid fa-circle-user fa-spin\"></i> Login</a>\n" +
+                                                    "                            <a class=\"dropdown-item\" href=\"/sign.jsp\" style=\"font-size: 20px\">\n" +
+                                                    "                                <i class=\"fa-solid fa-user-plus fa-flip-horizontal\"></i> Sign In</a>\n" +
+                                                    "                        </div>\n" +
+                                                    "                    </div>") : ("<a href='/logout'></a>")%>
+                                        </span>
+            <%--                <span class=" text-white"><%=session.getAttribute("user") != null ? ((Login) session.getAttribute("user")).getUser() : ""%></span>--%>
         </div>
     </nav>
 </header>
