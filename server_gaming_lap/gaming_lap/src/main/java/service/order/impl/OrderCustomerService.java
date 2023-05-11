@@ -8,8 +8,13 @@ import service.order.IOrderCustomerService;
 import java.util.List;
 
 public class OrderCustomerService implements IOrderCustomerService {
-    public final ICustomerRepository customerRepository = new CustomerRepository();
+    private final ICustomerRepository customerRepository = new CustomerRepository();
     public List<Customer> getAllCustomer() {
         return this.customerRepository.getAllCustomer();
+    }
+
+    @Override
+    public List<Customer> searchCustomer(String name, String phone) {
+        return customerRepository.searchCustomers(name,phone);
     }
 }
