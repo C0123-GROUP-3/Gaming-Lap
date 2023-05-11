@@ -2,8 +2,8 @@ package controller;
 
 import model.Product;
 import model.TypeProduct;
-import service.IProductService;
-import service.impl.ProductService;
+import service.product.IProductService;
+import service.product.impl.ProductService;
 
 
 import javax.servlet.*;

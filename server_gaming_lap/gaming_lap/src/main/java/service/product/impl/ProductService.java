@@ -4,7 +4,8 @@ import model.Product;
 import model.TypeProduct;
 import repository.IProductRepository;
 import repository.impl.ProductRepository;
-import service.IProductService;
+import service.product.IProductService;
+
 
 import java.util.List;
 

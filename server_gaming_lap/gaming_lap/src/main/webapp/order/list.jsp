@@ -31,7 +31,7 @@
         rel="stylesheet"
 />
 <body>
-<jsp:include page="header_admin.jsp"></jsp:include>
+<jsp:include page="../header_admin.jsp"></jsp:include>
 <nav class="navbar navbar-light bg-light" style="position: sticky; top:0;left: 0;right: 0">
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
@@ -90,7 +90,7 @@
     </c:forEach>
     </tbody>
 </table>
-<jsp:include page="footer_admin.jsp"></jsp:include>
+<jsp:include page="../footer_admin.jsp"></jsp:include>
 <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="update"
      aria-hidden="true">
     <div class="modal-dialog">

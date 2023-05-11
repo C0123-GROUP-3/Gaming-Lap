@@ -30,9 +30,9 @@
         rel="stylesheet"
 />
 <body>
-<jsp:include page="order/header_admin.jsp"></jsp:include>
+<jsp:include page="header_admin.jsp"></jsp:include>
 ádasd
-<jsp:include page="order/footer_admin.jsp"></jsp:include>
+<jsp:include page="footer_admin.jsp"></jsp:include>
 </body>
 </html>
 <!-- MDB -->
