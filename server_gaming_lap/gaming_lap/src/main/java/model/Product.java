@@ -38,6 +38,16 @@ public class Product {
         this.createTime = createTime;
         this.updateTime = updateTime;
     }
+    public Product(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Product(int id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 
     public Product(String name, String description, double price, String brand, TypeProduct typeProduct, String image, String createTime, String updateTime) {
         this.name = name;

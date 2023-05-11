@@ -1,4 +1,4 @@
-package service;
+package service.product;
 
 import model.Product;
 import model.TypeProduct;
