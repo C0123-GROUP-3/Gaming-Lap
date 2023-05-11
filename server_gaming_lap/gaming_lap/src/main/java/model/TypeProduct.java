@@ -1,4 +1,5 @@
 package model;
+
 public class TypeProduct {
     private int typeId;
     private String typeName;
@@ -15,8 +16,12 @@ public class TypeProduct {
         this.typeName = typeName;
     }
 
+    public TypeProduct(int typeId) {
+        this.typeId = typeId;
+    }
+
     public int getTypeId() {
-        return this.typeId;
+        return typeId;
     }
 
     public void setTypeId(int typeId) {
@@ -24,7 +29,7 @@ public class TypeProduct {
     }
 
     public String getTypeName() {
-        return this.typeName;
+        return typeName;
     }
 
     public void setTypeName(String typeName) {

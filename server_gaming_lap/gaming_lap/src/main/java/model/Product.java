@@ -1,6 +1,9 @@
 package model;
 
+
+
 public class Product {
+
     private int id;
     private String name;
     private String description;
@@ -14,7 +17,17 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String productKey, String name, String description, double price, String brand, TypeProduct typeProduct, String image, String createTime, String updateTime) {
+    public Product(int id, String name, String description, double price, String brand, TypeProduct typeProduct, String image) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.brand = brand;
+        this.typeProduct = typeProduct;
+        this.image = image;
+    }
+
+    public Product(int id, String name, String description, double price, String brand, TypeProduct typeProduct, String image, String createTime, String updateTime) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -25,18 +38,6 @@ public class Product {
         this.createTime = createTime;
         this.updateTime = updateTime;
     }
-
-    public Product(String productKey, String name, String description, double price, String brand, TypeProduct typeProduct, String image, String createTime, String updateTime) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.brand = brand;
-        this.typeProduct = typeProduct;
-        this.image = image;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-    }
-
     public Product(int id, String name) {
         this.id = id;
         this.name = name;
@@ -48,16 +49,39 @@ public class Product {
         this.price = price;
     }
 
+    public Product(String name, String description, double price, String brand, TypeProduct typeProduct, String image, String createTime, String updateTime) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.brand = brand;
+        this.typeProduct = typeProduct;
+        this.image = image;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
+
+    public Product(String name, String description, double price, String brand, TypeProduct typeProduct, String image) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.brand = brand;
+        this.typeProduct = typeProduct;
+        this.image = image;
+    }
+
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
+
+
+
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -65,7 +89,7 @@ public class Product {
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     public void setDescription(String description) {
@@ -73,7 +97,7 @@ public class Product {
     }
 
     public double getPrice() {
-        return this.price;
+        return price;
     }
 
     public void setPrice(double price) {
@@ -81,7 +105,7 @@ public class Product {
     }
 
     public String getBrand() {
-        return this.brand;
+        return brand;
     }
 
     public void setBrand(String brand) {
@@ -89,7 +113,7 @@ public class Product {
     }
 
     public TypeProduct getTypeProduct() {
-        return this.typeProduct;
+        return typeProduct;
     }
 
     public void setTypeProduct(TypeProduct typeProduct) {
@@ -97,7 +121,7 @@ public class Product {
     }
 
     public String getImage() {
-        return this.image;
+        return image;
     }
 
     public void setImage(String image) {
@@ -105,7 +129,7 @@ public class Product {
     }
 
     public String getCreateTime() {
-        return this.createTime;
+        return createTime;
     }
 
     public void setCreateTime(String createTime) {
@@ -113,7 +137,7 @@ public class Product {
     }
 
     public String getUpdateTime() {
-        return this.updateTime;
+        return updateTime;
     }
 
     public void setUpdateTime(String updateTime) {

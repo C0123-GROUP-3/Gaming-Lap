@@ -6,18 +6,21 @@ public class Customer {
     private String phone;
     private String address;
     private String email;
-    private String create_time;
-    private String update_time;
-    private Login login;
+    private int accountId;
+    private String createTime;
+    private  String updateTime;
+    private Account login;
 
-    public Customer(int id, String name, String phone, String address, String email, String create_time, String update_time) {
+
+
+    public Customer(int id, String name, String phone, String address, String email, String createTime, String updateTime) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.email = email;
-        this.create_time = create_time;
-        this.update_time = update_time;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public Customer(int id, String name, String phone, String address, String email) {
@@ -34,31 +37,46 @@ public class Customer {
         this.address = address;
         this.email = email;
     }
-
     public Customer(int id, String name, String phone) {
         this.id = id;
         this.name = name;
         this.phone = phone;
     }
 
-    public String getCreate_time() {
-        return this.create_time;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setCreate_time(String create_time) {
-        this.create_time = create_time;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
-    public String getUpdate_time() {
-        return this.update_time;
+    public Account getLogin() {
+        return login;
     }
 
-    public void setUpdate_time(String update_time) {
-        this.update_time = update_time;
+    public void setLogin(Account login) {
+        this.login = login;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(int id) {
@@ -66,7 +84,7 @@ public class Customer {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -74,7 +92,7 @@ public class Customer {
     }
 
     public String getPhone() {
-        return this.phone;
+        return phone;
     }
 
     public void setPhone(String phone) {
@@ -82,7 +100,7 @@ public class Customer {
     }
 
     public String getAddress() {
-        return this.address;
+        return address;
     }
 
     public void setAddress(String address) {
@@ -90,10 +108,11 @@ public class Customer {
     }
 
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
