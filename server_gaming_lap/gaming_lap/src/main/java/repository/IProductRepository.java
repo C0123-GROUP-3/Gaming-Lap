@@ -19,4 +19,12 @@ public interface IProductRepository {
     List<Product> getListSortByPrice();
 
     List<TypeProduct> getTypeProductList();
+
+    List<Product> keyboardList();
+
+    List<Product> laptopList();
+
+    List<Product> headphoneList();
+
+    List<Product> mouseList();
 }

@@ -54,9 +54,7 @@
             <div>
                 <button class="btn" style="border: 1px solid #DDDDDD" onclick="window.location.href='/Product?action=create'">Add Product</button>
             </div>
-            <form action="/Product?action=sortByPrice" method="post" style="margin-left: 20px">
-                <button class="btn"  style="border: 1px solid #DDDDDD" type="submit">Sort By Price</button>
-            </form>
+
 
         </div>
         <form class="d-flex" action="/Product?action=search" method="post">
