@@ -54,36 +54,36 @@
   <form  method="post" class="text_left">
     <div class="form-outline mb-4">
       <fieldset disabled>
-      <input type="text" id="form6Example2" name="id" value="${id}" class="form-control" />
+      <input required type="text" id="form6Example2" name="id" value="${id}" class="form-control" />
       <label class="form-label" for="form6Example2">ID</label>
       </fieldset>
     </div>
     <div class="form-outline mb-4">
-      <input oninput="checkName()" type="text" id="form6Example3"name="name"value="${name}" class="form-control" />
+      <input required oninput="checkName()" type="text" id="form6Example3"name="name"value="${name}" class="form-control" />
       <small style="color: red" id="checkName"></small>
       <label class="form-label" for="form6Example3">Name</label>
     </div>
     <div class="form-outline mb-4">
-      <input oninput="checkPhone()" type="number" id="form6Example4" name="phone"value="${phone}" class="form-control" />
+      <input required oninput="checkPhone()" type="number" id="form6Example4" name="phone"value="${phone}" class="form-control" />
       <small style="color: red" id="checkPhone"></small>
       <label class="form-label" for="form6Example4">Phone Number</label>
     </div>
     <div class="form-outline mb-4">
-      <input type="text" id="form6Example5" name="address"value="${address}" class="form-control" />
+      <input required type="text" id="form6Example5" name="address"value="${address}" class="form-control" />
       <label class="form-label" for="form6Example5">Address</label>
     </div>
     <div class="form-outline mb-4">
-      <input oninput="checkEmail()" type="email" id="form6Example6" name="email"value="${email}" class="form-control" />
+      <input required oninput="checkEmail()" type="email" id="form6Example6" name="email"value="${email}" class="form-control" />
       <small style="color: red" id="checkEmail"></small>
       <label class="form-label" for="form6Example6">Email</label>
     </div>
     <div class="form-outline mb-4">
-      <input oninput="checkUser()" type="text" id="form6Example7" name="user" value="${user}" class="form-control"/>
+      <input required oninput="checkUser()" type="text" id="form6Example7" name="user" value="${user}" class="form-control"/>
       <small style="color: red" id="checkUser"></small>
-      <label class="form-label" for="form6Example7">Account Email</label>
+      <label class="form-label" for="form6Example7">Account </label>
     </div>
     <div class="form-outline mb-4">
-      <input oninput="checkPass()" type="text" id="form6Example8" name="pass"  value="${pass}" class="form-control"/>
+      <input required oninput="checkPass()" type="text" id="form6Example8" name="pass"  value="${pass}" class="form-control"/>
       <small style="color: red" id="checkPass"></small>
       <label class="form-label" for="form6Example8">PassWord</label>
     </div>
@@ -131,7 +131,7 @@
 
   function checkUser() {
     let email = document.getElementById("form6Example7").value;
-    let regexName = /^[a-z]\w{5,}\@[a-z]{3,5}\.[a-z]{2,5}$/;
+    let regexName = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/;
     if (regexName.test(email)) {
       document.getElementById("checkUser").innerText = "";
     } else {

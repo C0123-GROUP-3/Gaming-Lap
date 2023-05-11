@@ -4,10 +4,11 @@ import model.Customer;
 import repository.ICustomerRepository;
 import repository.impl.CustomerRepository;
 import service.ICustomerService;
+
 import java.util.List;
 
 public class CustomerService implements ICustomerService {
-    private static ICustomerRepository iCustomerRepository=new CustomerRepository();
+   private static ICustomerRepository iCustomerRepository=new CustomerRepository();
     @Override
     public List<Customer> getAll() {
         List<Customer> customerList=iCustomerRepository.getAll();

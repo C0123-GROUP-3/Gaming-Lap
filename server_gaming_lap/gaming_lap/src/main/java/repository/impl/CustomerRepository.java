@@ -1,6 +1,7 @@
 package repository.impl;
 
 import model.Customer;
+import repository.BaseRepository;
 import repository.ICustomerRepository;
 
 import java.sql.*;
