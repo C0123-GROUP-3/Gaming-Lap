@@ -31,16 +31,17 @@
 />
 </head>
 <style>
+    th{
+        font-size: 20px;
+    }
     .img-product{
         width: 100px;
         height: 100px;
     }
-    a{
-        color: black;
-    }
     a:hover{
-        color: blue;
+        color: #0a53be;
     }
+
 </style>
 <body>
 
@@ -98,7 +99,7 @@
         <tr>
             <td>${status.count}</td>
             <td>${product.id}</td>
-            <td><a href="/Product?action=detail&id=${product.id}">${product.name}</a></td>
+            <td><a style="color: black" href="/Product?action=detail&id=${product.id}">${product.name}</a></td>
             <td>$${product.price}</td>
             <td>${product.brand}</td>
             <td>${product.createTime}</td>
