@@ -29,13 +29,13 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn " style="border: 1px solid #DDDDDD;"
+                <button class="btn btn-success" style="border: 1px solid #DDDDDD;"
                         onclick="window.location.href='/customer?action=create'">Add Customer
                 </button>
             </div>
-            <form action="/customer?action=sort" method="post" style="margin-left: 20px">
-                <button class="btn" style="border: 1px solid #DDDDDD" type="submit">Sort By Name</button>
-            </form>
+<%--            <form action="/customer?action=sort" method="post" style="margin-left: 20px">--%>
+<%--                <button class="btn" style="border: 1px solid #DDDDDD" type="submit">Sort By Name</button>--%>
+<%--            </form>--%>
 
         </div>
         <form class="d-flex" action="/customer?action=search" method="post">
@@ -45,7 +45,7 @@
             <input style="width: 20vw" class="form-control me-2" type="search" maxlength="10" name="phone"
                    value="${phone}"
                    placeholder="Search by phone number" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">Search</button>
+            <button class="btn btn-primary" type="submit">Search</button>
         </form>
 
     </div>
@@ -75,12 +75,12 @@
             <td>${customerList.getCreateTime()}</td>
             <td>${customerList.getUpdateTime()}</td>
             <td colspan="2">
-                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         onclick="window.location.href='/customer?action=edit&id=${customerList.id}'"
                         data-bs-target="#updateModal">
                     EDIT
                 </button>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                         onclick="infoDelete('${customerList.id}','${customerList.name}')"
                         data-bs-target="#deleteModal ">
                     Delete

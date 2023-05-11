@@ -5,17 +5,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-    private static String URL = "jdbc:mysql://localhost:3306/gaming_lap";
-    private static String USER = "root";
-    private static String PASS = "@Dinh123";
-    public static Connection getConnectDB(){
-       Connection connection =null;
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection(URL, USER, PASS);
-            } catch (ClassNotFoundException | SQLException e) {
-               e.printStackTrace();
-            }
+    private static final String URL_DATABASE = "jdbc:mysql://localhost:3306/gaming";
+    private static final String USER = "root";
+    private static final String PASSWORD = "@Dinh123";
+
+    public static Connection getConnection() {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(URL_DATABASE,USER,PASSWORD);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return connection;
     }
 }

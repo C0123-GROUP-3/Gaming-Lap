@@ -70,16 +70,16 @@
             <small style="color: red" id="checkEmail"></small>
             <label class="form-label" for="form6Example6">Email</label>
         </div>
-        <div class="form-outline mb-4">
-            <input  required type="text" id="form6Example7" name="user" class="form-control"/>
-            <small style="color: red" id="checkUser"></small>
-            <label class="form-label" for="form6Example7">Account </label>
-        </div>
-        <div class="form-outline mb-4">
-            <input  required oninput="checkPass()" type="text" id="form6Example8" name="pass" class="form-control"/>
-            <small style="color: red" id="checkPass"></small>
-            <label class="form-label" for="form6Example8">PassWord</label>
-        </div>
+<%--        <div class="form-outline mb-4">--%>
+<%--            <input  required type="text" id="form6Example7" name="user" class="form-control"/>--%>
+<%--            <small style="color: red" id="checkUser"></small>--%>
+<%--            <label class="form-label" for="form6Example7">Account </label>--%>
+<%--        </div>--%>
+<%--        <div class="form-outline mb-4">--%>
+<%--            <input  required oninput="checkPass()" type="text" id="form6Example8" name="pass" class="form-control"/>--%>
+<%--            <small style="color: red" id="checkPass"></small>--%>
+<%--            <label class="form-label" for="form6Example8">PassWord</label>--%>
+<%--        </div>--%>
         <button type="submit" class="btn btn-dark btn-block mb-4">Create</button>
       <c:if test="${check}">
           <h3 style="color:red;">Successfully added new</h3>

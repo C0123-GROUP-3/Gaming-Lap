@@ -2,6 +2,8 @@ package controller;
 
 import model.Account;
 import model.Role;
+import repository.ILoginRepository;
+import repository.impl.LoginRepository;
 import service.ILoginService;
 import service.impl.LoginService;
 
@@ -9,9 +11,11 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
+    private static ILoginRepository iLoginRepository=new LoginRepository();
     private static ILoginService iLoginService = new LoginService();
 
     @Override
@@ -64,29 +68,50 @@ public class LoginServlet extends HttpServlet {
     private static void getLoginCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
-        boolean memorize= Boolean.parseBoolean(request.getParameter("memorize"));
-        Account login = iLoginService.checkLogin(user, pass);
+//        int role= Integer.parseInt(request.getParameter("role_id"));
+        List<Account> accounts=iLoginRepository.getCheckRolesAccount();
+//        boolean memorize= Boolean.parseBoolean(request.getParameter("memorize"));
 
-
-        if (login != null) {
-            HttpSession session = request.getSession();
-////            session tồn tại trong thời gian là 300s
-            session.setMaxInactiveInterval(300);
-            session.setAttribute("user", login);
-            response.sendRedirect("/customer");
-//            response.sendRedirect("/view/customer/list_product_customer.jsp");
-            if (memorize) {
-                Cookie cookie = new Cookie("cookieUser", login.getUser());
-                cookie.setMaxAge(300);
-                Cookie cookie1 = new Cookie("cookiePass", login.getPass());
-                cookie1.setMaxAge(300);
-                response.addCookie(cookie);
-                response.addCookie(cookie1);
+//        Account login = iLoginService.checkLogin(user, pass,role);
+        Account account=new Account();
+        for (Account s:accounts) {
+            if (s.getUser().equals(user)&&s.getPass().equals(pass)){
+                account=s;
+                break;
+            }
         }
-        }
-        else {
+        if (account== null) {
             request.setAttribute("error", "Incorrect Account or Password ?");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
+//            response.sendRedirect("/view/customer/list_product_customer.jsp");
+//            if (memorize) {
+//                Cookie cookie = new Cookie("cookieUser", login.getUser());
+//                cookie.setMaxAge(300);
+//                Cookie cookie1 = new Cookie("cookiePass", login.getPass());
+//                cookie1.setMaxAge(300);
+//                response.addCookie(cookie);
+//                response.addCookie(cookie1);
+//        }
+        }
+        else {
+            if (account.getRoleId()==1){
+                HttpSession session = request.getSession();
+////            session tồn tại trong thời gian là 300s
+                session.setMaxInactiveInterval(300);
+                session.setAttribute("user", account);
+                response.sendRedirect("/customer");
+            }else {
+                HttpSession session = request.getSession();
+////            session tồn tại trong thời gian là 300s
+                session.setMaxInactiveInterval(300);
+                session.setAttribute("user", account);
+                response.sendRedirect("/view/customer/list_product_c");
+            }
+//            HttpSession session = request.getSession();
+//////            session tồn tại trong thời gian là 300s
+//            session.setMaxInactiveInterval(300);
+//            session.setAttribute("user", account);
+//            response.sendRedirect("/customer");
         }
 
     }
@@ -95,14 +120,13 @@ public class LoginServlet extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         String re_pass = request.getParameter("repass");
-        String roleName=request.getParameter("role");
-        Role role=new Role(roleName);
+//        int role= Integer.parseInt(request.getParameter("role"));
         Account login= new Account(user, pass);
-        boolean checkSign = iLoginService.saveLogin(login);
 
         if (!pass.equals(re_pass)) {
             response.sendRedirect("/sign.jsp");
         } else {
+            boolean checkSign = iLoginService.saveLogin(login);
             login = iLoginService.checkLoginExit(user);
             if (login == null) {
                 request.getRequestDispatcher("/login.jsp").forward(request, response);

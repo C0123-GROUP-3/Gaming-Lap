@@ -40,7 +40,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Gaming Lap Management</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="/Product">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Orders</a>

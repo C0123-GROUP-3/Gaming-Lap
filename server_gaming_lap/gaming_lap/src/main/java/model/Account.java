@@ -4,7 +4,14 @@ public class Account {
     private String user;
     private String pass;
     private  int id;
-    private  Role role;
+    private int roleId;
+    private  Role role1;
+
+    public Account(String user, String pass, int roleId) {
+        this.user = user;
+        this.pass = pass;
+        this.roleId = roleId;
+    }
 
     public Account(String user) {
         this.user = user;
@@ -15,10 +22,10 @@ public class Account {
         this.pass = pass;
     }
 
-    public Account(String user, String pass, Role role) {
+    public Account(String user, String pass, Role role1) {
         this.user = user;
         this.pass = pass;
-        this.role = role;
+        this.role1 = role1;
     }
 
     public Account(int id, String user, String pass) {
@@ -27,22 +34,39 @@ public class Account {
         this.id = id;
     }
 
-    public Account(int id, String user, String pass, Role role) {
+    public Account(int id, String user, String pass, Role role1) {
         this.id = id;
         this.user = user;
         this.pass = pass;
-        this.role = role;
+        this.role1 = role1;
+    }
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public Role getRole() {
-        return role;
+        return role1;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(Role role1) {
+        this.role1 = role1;
     }
 
     public Account() {
+    }
+
+
+    public Role getRole1() {
+        return role1;
+    }
+
+    public void setRole1(Role role1) {
+        this.role1 = role1;
     }
 
     public int getId() {

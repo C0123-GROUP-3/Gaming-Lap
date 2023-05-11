@@ -20,7 +20,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public List<Customer> getAll() {
         List<Customer> customerList = new ArrayList<>();
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FORM);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -43,7 +43,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public boolean saveCustomer(Customer customer) {
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO);
             preparedStatement.setString(1, customer.getName());
@@ -58,7 +58,7 @@ public class CustomerRepository implements ICustomerRepository {
     }
     @Override
     public boolean deleteCustomer(int deleteId) {
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             CallableStatement callableStatement = connection.prepareCall(DELETE_CUSTOMER);
             callableStatement.setInt(1, deleteId);
@@ -73,7 +73,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public boolean editCustomer(Customer customer) {
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(EDIT_CUSTOMER);
             preparedStatement.setString(1, customer.getName());
@@ -92,7 +92,7 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public List<Customer> searchCustomer(String name, String phone) {
         List<Customer> customerList = new ArrayList<>();
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_CUSTOMER);
             preparedStatement.setString(1, '%' + name + '%');

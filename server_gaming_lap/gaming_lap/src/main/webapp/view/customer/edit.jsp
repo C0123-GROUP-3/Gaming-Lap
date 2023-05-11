@@ -77,16 +77,16 @@
       <small style="color: red" id="checkEmail"></small>
       <label class="form-label" for="form6Example6">Email</label>
     </div>
-    <div class="form-outline mb-4">
-      <input required oninput="checkUser()" type="text" id="form6Example7" name="user" value="${user}" class="form-control"/>
-      <small style="color: red" id="checkUser"></small>
-      <label class="form-label" for="form6Example7">Account </label>
-    </div>
-    <div class="form-outline mb-4">
-      <input required oninput="checkPass()" type="text" id="form6Example8" name="pass"  value="${pass}" class="form-control"/>
-      <small style="color: red" id="checkPass"></small>
-      <label class="form-label" for="form6Example8">PassWord</label>
-    </div>
+<%--    <div class="form-outline mb-4">--%>
+<%--      <input required oninput="checkUser()" type="text" id="form6Example7" name="user" value="${user}" class="form-control"/>--%>
+<%--      <small style="color: red" id="checkUser"></small>--%>
+<%--      <label class="form-label" for="form6Example7">Account </label>--%>
+<%--    </div>--%>
+<%--    <div class="form-outline mb-4">--%>
+<%--      <input required oninput="checkPass()" type="text" id="form6Example8" name="pass"  value="${pass}" class="form-control"/>--%>
+<%--      <small style="color: red" id="checkPass"></small>--%>
+<%--      <label class="form-label" for="form6Example8">PassWord</label>--%>
+<%--    </div>--%>
     <button type="submit" class="btn btn-dark btn-block mb-4">SAVE</button>
     <h4 style="color: red">
     </h4>

@@ -35,19 +35,11 @@ public class CustomerServlet extends HttpServlet {
             }
             case "edit": {
                 goEditCustomer(request, response);
-                int id = Integer.parseInt(request.getParameter("id"));
-                List<Account> loginList = iLoginService.getAll();
-                for (int y = 0; y < loginList.size(); y++) {
-                    if (id == loginList.get(y).getId()) {
-                        request.setAttribute("id", loginList.get(y).getId());
-                        request.setAttribute("user", loginList.get(y).getUser());
-                        request.setAttribute("pass", loginList.get(y).getPass());
-                        request.getRequestDispatcher("/view/customer/edit.jsp").forward(request, response);
-                        break;
-                    }
-                }
-                break;
+
+
             }
+            break;
+
             default: {
                 showList(request, response);
                 break;
@@ -145,7 +137,7 @@ public class CustomerServlet extends HttpServlet {
         Customer customer = new Customer(id, name, phone, address, email);
         Account login = new Account(id, user, pass);
         boolean check = iCustomerService.editCustomer(customer);
-        iLoginService.editLogin(login);
+//        iLoginService.editLogin(login);
         request.setAttribute("check", check);
         response.sendRedirect("/customer");
 
