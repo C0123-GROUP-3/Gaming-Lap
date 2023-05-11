@@ -8,13 +8,13 @@ import java.util.List;
 public interface IProductRepository {
     List<Product> getList();
 
-    boolean deleteProduct(String id);
+    boolean deleteProduct(int id);
 
     boolean saveProduct(Product product);
 
     boolean editProduct(Product product);
 
-    List<Product> searchList(String search);
+    List<Product> searchList(String search, int typeId);
 
     List<Product> getListSortByPrice();
 

@@ -5,16 +5,18 @@ import model.TypeProduct;
 import service.IProductService;
 import service.impl.ProductService;
 
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/Product")
 public class ProductServlet extends HttpServlet {
-    static IProductService productService = new ProductService();
-    static List<TypeProduct> typeProductList = productService.getTypeProductList();
+      private static IProductService productService = new ProductService();
+    private static List<TypeProduct> typeProductList = productService.getTypeProductList();
 
 
     @Override
@@ -32,9 +34,24 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "edit":
                 editProductGet(request, response);
-
                 break;
-            case "delete":
+            case "detail":
+                List<Product> productList = productService.getList();
+                int id = Integer.parseInt(request.getParameter("id"));
+                for (int i = 0; i < productList.size(); i++) {
+                    if (id==productList.get(i).getId()){
+                        request.setAttribute("id",id);
+                        request.setAttribute("name",productList.get(i).getName());
+                        request.setAttribute("description",productList.get(i).getDescription());
+                        request.setAttribute("price",productList.get(i).getPrice());
+                        request.setAttribute("brand",productList.get(i).getBrand());
+                        request.setAttribute("typeProduct",productList.get(i).getTypeProduct().getTypeName());
+                        request.setAttribute("image",productList.get(i).getImage());
+                        request.setAttribute("createTime",productList.get(i).getCreateTime());
+                        request.setAttribute("updateTime",productList.get(i).getUpdateTime());
+                        request.getRequestDispatcher("/view/product/detail.jsp").forward(request,response);
+                    }
+                }
                 break;
             case "search":
                 break;
@@ -69,6 +86,7 @@ public class ProductServlet extends HttpServlet {
     private static void showList(List<Product> productService, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productList = productService;
         request.setAttribute("productList", productList);
+        request.setAttribute("typeProductList",typeProductList);
         request.getRequestDispatcher("/view/product/productList.jsp").forward(request, response);
     }
 
@@ -81,16 +99,26 @@ public class ProductServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-
                 createProductPost(request, response);
                 break;
             case "delete":
-
+                int id = Integer.parseInt(request.getParameter("deleteId"));
+                productService.deleteProduct(id);
+                request.getRequestDispatcher("/view/product/productList.jsp");
                 break;
             case "edit":
                 editProductPost(request, response);
                 break;
             case "search":
+                String search = request.getParameter("search");
+                int typeId = Integer.parseInt(request.getParameter("typeProduct"));
+                List<Product> productList = new ArrayList<>();
+
+                productList = productService.searchList(search,typeId);
+                request.setAttribute("productList",productList);
+                request.setAttribute("typeProductList",typeProductList);
+                request.getRequestDispatcher("/view/product/productList.jsp").forward(request,response);
+
                 break;
             case "sortByPrice":
 

@@ -18,7 +18,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public boolean deleteProduct(String id) {
+    public boolean deleteProduct(int id) {
         return productRepository.deleteProduct(id);
     }
 
@@ -33,8 +33,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> searchList(String search) {
-        return productRepository.searchList(search);
+    public List<Product> searchList(String search, int typeId) {
+        return productRepository.searchList(search,typeId);
     }
 
     @Override

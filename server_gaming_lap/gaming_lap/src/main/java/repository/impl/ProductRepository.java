@@ -20,7 +20,7 @@ public class ProductRepository implements IProductRepository {
     private static final String DELETE_PRODUCT_BY_ID = "DELETE FROM product WHERE id = ?;";
     private static final String INSERT_PRODUCT = "INSERT INTO product (name, description,price, brand, type_id, image) VALUE (?,?,?,?,?,?);";
     private static final String UPDATE_BY_ID = "UPDATE product SET name = ?, description = ?, price = ? , brand = ?, type_id = ?, image = ?, update_time = ? WHERE id = ?;";
-    private static final String SEARCH = "SELECT * FROM product WHERE brand LIKE ? OR name LIKE ?;";
+    private static final String SEARCH = "SELECT  * FROM product WHERE type_id LIKE ?  AND name LIKE ?;";
     private static final String SORT_PRICE = "SELECT * FROM product ORDER BY price;";
 
 
@@ -53,12 +53,12 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public boolean deleteProduct(String id) {
+    public boolean deleteProduct(int id) {
         Connection connection = BaseRepository.getConnection();
         boolean check;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_PRODUCT_BY_ID);
-            preparedStatement.setString(1, id);
+            preparedStatement.setInt(1, id);
             check = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -111,23 +111,27 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public List<Product> searchList(String search) {
+    public List<Product> searchList(String search, int typeId) {
         Connection connection = BaseRepository.getConnection();
         List<Product> productList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH);
-            preparedStatement.setString(1, "%" + search + "%");
             preparedStatement.setString(2, "%" + search + "%");
+            preparedStatement.setString(1,"%" + typeId + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String id = resultSet.getString("id");
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String description = resultSet.getString("description");
                 double price = resultSet.getDouble("price");
                 String brand = resultSet.getString("brand");
+                int typeProductId = resultSet.getInt("type_id");
+                TypeProduct typeProduct1 = new TypeProduct(typeProductId);
                 String image = resultSet.getString("image");
-//                Product product = new Product(id, name, description, price, brand, image);
-//                productList.add(product);
+                String createTime = resultSet.getString("create_time");
+                String updateTime = resultSet.getString("update_time");
+                Product product = new Product(id, name, description, price, brand, typeProduct1, image, createTime, updateTime);
+                productList.add(product);
             }
         } catch (SQLException e) {
             e.printStackTrace();

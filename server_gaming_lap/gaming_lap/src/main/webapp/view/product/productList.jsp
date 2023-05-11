@@ -35,6 +35,12 @@
         width: 100px;
         height: 100px;
     }
+    a{
+        color: black;
+    }
+    a:hover{
+        color: blue;
+    }
 </style>
 <body>
 
@@ -54,6 +60,14 @@
         </div>
         <form class="d-flex" action="/Product?action=search" method="post">
 
+            <select name="typeProduct" style="width: 10vw" class="form-select" aria-label="Default select example">
+
+                <c:forEach var="type" items="${typeProductList}">
+                    <option value="${type.typeId}">${type.typeName}</option>
+                </c:forEach>
+
+            </select>
+
             <input style="width: 30vw" class="form-control me-2" type="text" name="search"
                    placeholder="Search" aria-label="Search" value="${search}">
             <button class="btn btn-secondary" type="submit">Search</button>
@@ -70,7 +84,7 @@
         <th>#</th>
         <th>ID</th>
         <th>Name</th>
-        <th>Price</th>
+        <th>Price (USD)</th>
         <th>Brand</th>
         <th>Create time</th>
         <th>Update time</th>
@@ -84,8 +98,8 @@
         <tr>
             <td>${status.count}</td>
             <td>${product.id}</td>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
+            <td><a href="/Product?action=detail&id=${product.id}">${product.name}</a></td>
+            <td>$${product.price}</td>
             <td>${product.brand}</td>
             <td>${product.createTime}</td>
             <td>${product.updateTime}</td>
