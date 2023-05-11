@@ -28,7 +28,7 @@ public class LoginRepository implements ILoginRepository {
     @Override
     public List<Account> getCheckRolesAccount() {
         List<Account> loginList = new ArrayList<>();
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FORM_LOGIN_ROLES);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -48,7 +48,7 @@ public class LoginRepository implements ILoginRepository {
 
     @Override
     public boolean saveLogin(Account login) {
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_LOGIN);
             preparedStatement.setString(1, login.getUser());
@@ -62,7 +62,7 @@ public class LoginRepository implements ILoginRepository {
     }
 
     public Account checkLogin(String user, String pass) {
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
        PreparedStatement preparedStatement= connection.prepareStatement(LOGIN);
 
@@ -81,7 +81,7 @@ public class LoginRepository implements ILoginRepository {
 
     @Override
     public Role checkRole(String roleName) {
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_ROLES);
             preparedStatement.setString(1, roleName);
@@ -98,7 +98,7 @@ public class LoginRepository implements ILoginRepository {
     }
     @Override
     public Account checkLoginExit(String user) {
-        Connection connection = BaseRepository.getConnectDB();
+        Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(CHECK_LOGIN);
             preparedStatement.setString(1, user);
@@ -116,7 +116,7 @@ public class LoginRepository implements ILoginRepository {
 
     @Override
     public boolean editLogin(Account login) {
-        Connection connection=BaseRepository.getConnectDB();
+        Connection connection=BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement=connection.prepareStatement(EDIT_LOGIN);
             preparedStatement.setString(1, login.getUser());
