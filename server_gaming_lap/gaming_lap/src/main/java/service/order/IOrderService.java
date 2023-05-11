@@ -11,11 +11,17 @@ public interface IOrderService {
 
     List<Order> getAllOrderOrderByDate();
 
-    boolean deleteOrder(int var1);
+    boolean deleteOrder(int id);
 
-    boolean saveOrder(Order var1);
+    boolean saveOrder(int id);
 
     List<Customer> getCustomerList();
 
     List<Product> getProductList();
+
+    List<Customer> getCustomerById(int id);
+
+    boolean saveOrderDetail(int customerId, int productId, int quantityProduct);
+
+    List<Order> getOrder();
 }

@@ -12,19 +12,19 @@ import java.util.List;
 public class OrderService implements IOrderService {
     private final IOrderRepository orderRepository = new OrderRepository();
     public List<Order> getAllOrder() {
-        return this.orderRepository.getAllOrder();
+        return orderRepository.getAllOrder();
     }
 
     public List<Order> getAllOrderOrderByDate() {
-        return this.orderRepository.getAllOrderOrderByDate();
+        return orderRepository.getAllOrderOrderByDate();
     }
 
     public boolean deleteOrder(int id) {
-        return this.orderRepository.deleteOrder(id);
+        return orderRepository.deleteOrder(id);
     }
 
-    public boolean saveOrder(Order order) {
-        return this.orderRepository.saveOrder(order);
+    public boolean saveOrder(int id) {
+        return orderRepository.saveOrder(id);
     }
 
     public List<Customer> getCustomerList() {
@@ -33,5 +33,20 @@ public class OrderService implements IOrderService {
 
     public List<Product> getProductList() {
         return this.orderRepository.getProductList();
+    }
+
+    @Override
+    public List<Customer> getCustomerById(int id) {
+        return orderRepository.getCustomerById(id);
+    }
+
+    @Override
+    public boolean saveOrderDetail(int customerId, int productId, int quantityProduct) {
+        return orderRepository.saveOrderDetail(customerId,productId,quantityProduct);
+    }
+
+    @Override
+    public List<Order> getOrder() {
+        return orderRepository.getOrder();
     }
 }

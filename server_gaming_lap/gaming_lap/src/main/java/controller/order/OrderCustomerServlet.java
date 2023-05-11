@@ -1,8 +1,8 @@
 package controller.order;
 
 import model.Customer;
-import service.order.ICustomerService;
-import service.order.impl.CustomerService;
+import service.order.IOrderCustomerService;
+import service.order.impl.OrderCustomerService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,7 +12,8 @@ import java.util.List;
 
 @WebServlet(name = "OrderCustomerServlet", value = "/OrderCustomerServlet")
 public class OrderCustomerServlet extends HttpServlet {
-    public final ICustomerService customerService = new CustomerService();
+    public final IOrderCustomerService customerService = new OrderCustomerService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -21,13 +22,19 @@ public class OrderCustomerServlet extends HttpServlet {
         }
 
         switch (action) {
+            case "create":
+                break;
             default:
-                List<Customer> customerList = this.customerService.getAllCustomer();
-                request.setAttribute("customerList", customerList);
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/customer/customerList.jsp");
-                requestDispatcher.forward(request, response);
-            case "crate":
+                showCustomerListToSelect(request, response);
+
         }
+    }
+
+    private void showCustomerListToSelect(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Customer> customerList = this.customerService.getAllCustomer();
+        request.setAttribute("customerList", customerList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/order/orderCustomerList.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     @Override

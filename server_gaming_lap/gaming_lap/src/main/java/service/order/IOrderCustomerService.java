@@ -4,6 +4,6 @@ import model.Customer;
 
 import java.util.List;
 
-public interface ICustomerService {
+public interface IOrderCustomerService {
     List<Customer> getAllCustomer();
 }

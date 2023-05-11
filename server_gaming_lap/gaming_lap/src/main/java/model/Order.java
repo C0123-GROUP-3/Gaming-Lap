@@ -18,7 +18,11 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
-    public Order(String orderDate, Customer customer, Product product, String totalPrice) {
+    public Order(String id) {
+        this.id = id;
+    }
+
+    public Order(Customer customer, String totalPrice) {
         this.customer = customer;
         this.totalPrice = totalPrice;
     }
