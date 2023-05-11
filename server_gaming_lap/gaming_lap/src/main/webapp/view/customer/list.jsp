@@ -38,11 +38,12 @@
             </form>
 
         </div>
-        <form class="d-flex" action="/customer?action=search" method="post" >
+        <form class="d-flex" action="/customer?action=search" method="post">
             <input type="text" name="action" value="search" hidden>
             <input style="width: 15vw" class="form-control me-2" type="search" name="name" value="${name}"
                    placeholder="Search by Name" aria-label="Search">
-            <input style="width: 20vw" class="form-control me-2" type="search" maxlength="10" name="phone" value="${phone}"
+            <input style="width: 20vw" class="form-control me-2" type="search" maxlength="10" name="phone"
+                   value="${phone}"
                    placeholder="Search by phone number" aria-label="Search">
             <button class="btn btn-secondary" type="submit">Search</button>
         </form>
@@ -75,7 +76,8 @@
             <td>${customerList.getUpdateTime()}</td>
             <td colspan="2">
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#updateModal${customerList.id}">
+                        onclick="window.location.href='/customer?action=edit&id=${customerList.id}'"
+                        data-bs-target="#updateModal">
                     EDIT
                 </button>
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
@@ -85,50 +87,54 @@
                 </button>
             </td>
         </tr>
-        <div class="modal fade" id="updateModal${customerList.id}" tabindex="-1" aria-labelledby="update" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="update">Chỉnh sửa tên</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                       <span></span> Do you want to edit customers <span style="color: red">${customerList.name}</span> <span> name ?</span>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-primary"
-                                onclick="window.location.href='/customer?action=edit&id=${customerList.getId()}'">YES
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"> Erase the name</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="/customer?action=delete" method="post">
-                        <div class="modal-body">
-                            <input hidden id="deleteId" name="deleteId">
-                            <span> Do you want to delete customers </span><span style="color: red"
-                                                                                id="deleteName"></span><span> name ?</span>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                <button type="submit" class="btn btn-primary">YES</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </c:forEach>
     </tbody>
 </table>
+<%--<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="update" aria-hidden="true">--%>
+<%--    <div class="modal-dialog">--%>
+<%--        <div class="modal-content">--%>
+<%--            <div class="modal-header">--%>
+<%--                <h5 class="modal-title" id="update">Chỉnh sửa tên</h5>--%>
+<%--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
+<%--            </div>--%>
+<%--            <form action="/customer?action=edit" method="post">--%>
+<%--                <div class="modal-body">--%>
+<%--                    <input hidden id="updateId" name="updateId">--%>
+<%--                    <span> Do you want to edit customers </span><span id="updateName"--%>
+<%--                                                                     style="color: red"></span><span> ?</span>--%>
+<%--                </div>--%>
+<%--                <div class="modal-footer">--%>
+<%--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>--%>
+<%--                    <button type="submit" class="btn btn-primary">--%>
+<%--                        YES--%>
+<%--                    </button>--%>
+<%--                </div>--%>
+<%--            </form>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Erase the name</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/customer?action=delete" method="post">
+                <div class="modal-body">
+                    <input hidden id="deleteId" name="deleteId">
+                    <span> Do you want to delete customers </span><span style="color: red"
+                                                                        id="deleteName"></span><span> name ?</span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-primary">YES</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <jsp:include page="/footer_admin.jsp"></jsp:include>
 <script
         type="text/javascript"

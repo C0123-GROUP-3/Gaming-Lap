@@ -1,17 +1,15 @@
 package controller;
 
-import model.Account;
 import model.Customer;
+import model.Account;
 import service.ICustomerService;
 import service.ILoginService;
 import service.impl.CustomerService;
 import service.impl.LoginService;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -38,7 +36,7 @@ public class CustomerServlet extends HttpServlet {
             case "edit": {
                 goEditCustomer(request, response);
                 int id = Integer.parseInt(request.getParameter("id"));
-                List<Account> loginList = iLoginService.getCheckRolesAccount();
+                List<Account> loginList = iLoginService.getAll();
                 for (int y = 0; y < loginList.size(); y++) {
                     if (id == loginList.get(y).getId()) {
                         request.setAttribute("id", loginList.get(y).getId());
