@@ -31,17 +31,16 @@
 />
 </head>
 <style>
-    th{
-        font-size: 20px;
-    }
     .img-product{
         width: 100px;
         height: 100px;
     }
-    a:hover{
-        color: #0a53be;
+    a{
+        color: black;
     }
-
+    a:hover{
+        color: blue;
+    }
 </style>
 <body>
 
@@ -52,9 +51,11 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn" style="border: 1px solid #DDDDDD" onclick="window.location.href='/Product?action=create'">Add Product</button>
+                <button class="btn btn-success" style="border: 1px solid #DDDDDD" onclick="window.location.href='/Product?action=create'">Add Product</button>
             </div>
-
+            <form action="/Product?action=sortByPrice" method="post" style="margin-left: 20px">
+                <button class="btn btn-success"  style="border: 1px solid #DDDDDD" type="submit">Sort By Price</button>
+            </form>
 
         </div>
         <form class="d-flex" action="/Product?action=search" method="post">
@@ -69,7 +70,7 @@
 
             <input style="width: 30vw" class="form-control me-2" type="text" name="search"
                    placeholder="Search" aria-label="Search" value="${search}">
-            <button class="btn btn-secondary" type="submit">Search</button>
+            <button class="btn btn-primary" type="submit">Search</button>
         </form>
 
     </div>
@@ -97,16 +98,16 @@
         <tr>
             <td>${status.count}</td>
             <td>${product.id}</td>
-            <td><a style="color: black" href="/Product?action=detail&id=${product.id}">${product.name}</a></td>
+            <td><a href="/Product?action=detail&id=${product.id}">${product.name}</a></td>
             <td>$${product.price}</td>
             <td>${product.brand}</td>
             <td>${product.createTime}</td>
             <td>${product.updateTime}</td>
             <td>${product.typeProduct.typeName}</td>
             <td><img class="img-product" src="${product.image}" alt=""></td>
-            <th>
-                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-secondary">Edit</button>
-                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <th colspan="2" style="display: flex ">
+                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-primary">Edit</button>
+                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Delete
                 </button>
             </th>

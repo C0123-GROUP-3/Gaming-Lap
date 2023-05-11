@@ -37,8 +37,8 @@ public class CustomerServlet extends HttpServlet {
                 goEditCustomer(request, response);
 
 
-                }
-                break;
+            }
+            break;
 
             default: {
                 showList(request, response);
@@ -137,7 +137,7 @@ public class CustomerServlet extends HttpServlet {
         Customer customer = new Customer(id, name, phone, address, email);
         Account login = new Account(id, user, pass);
         boolean check = iCustomerService.editCustomer(customer);
-        iLoginService.editLogin(login);
+//        iLoginService.editLogin(login);
         request.setAttribute("check", check);
         response.sendRedirect("/customer");
 
