@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../../datatables/css/dataTables.bootstrap5.min.css"/>
 </head>
 <body>
-<jsp:include page="/order/header_admin.jsp"></jsp:include>
+<jsp:include page="/header_admin.jsp"></jsp:include>
 <nav class="navbar navbar-light bg-light" style="position: sticky;top:0;left: 0;right: 0">
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
@@ -123,7 +123,7 @@
     </c:forEach>
     </tbody>
 </table>
-<jsp:include page="/order/footer_admin.jsp"></jsp:include>
+<jsp:include page="/footer_admin.jsp"></jsp:include>
 <script
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"

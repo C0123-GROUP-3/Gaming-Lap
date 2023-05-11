@@ -40,7 +40,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <body>
 <div class="col-12">
-    <jsp:include page="../order/header_admin.jsp"></jsp:include>
+    <jsp:include page="../header_admin.jsp"></jsp:include>
 </div>
 <h3 style="text-align: center;margin-top:30px ">Add New Order Detail</h3>
 <div class="col-lg-2 col-sm-1"></div>
@@ -150,7 +150,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-<jsp:include page="../order/footer_admin.jsp"></jsp:include>
+<jsp:include page="../footer_admin.jsp"></jsp:include>
 <script>
     function infoCustome(id, name) {
         document.getElementById("customerId").value = id;

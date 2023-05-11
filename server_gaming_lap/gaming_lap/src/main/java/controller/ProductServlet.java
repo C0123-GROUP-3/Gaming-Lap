@@ -2,8 +2,9 @@ package controller;
 
 import model.Product;
 import model.TypeProduct;
-import service.IProductService;
-import service.impl.ProductService;
+import service.product.IProductService;
+import service.product.impl.ProductService;
+
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,8 +15,8 @@ import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/Product")
 public class ProductServlet extends HttpServlet {
-    static IProductService productService = new ProductService();
-    static List<TypeProduct> typeProductList = productService.getTypeProductList();
+      private static IProductService productService = new ProductService();
+    private static List<TypeProduct> typeProductList = productService.getTypeProductList();
 
 
     @Override
