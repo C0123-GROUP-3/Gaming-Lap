@@ -21,6 +21,9 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
       rel="stylesheet"/>
 <link rel="stylesheet" href="dropdown.css">
+<style>
+
+</style>
 <head>
     <title>laptops</title>
 </head>
@@ -71,8 +74,17 @@
             <!-- Left links -->
         </div>
         <!-- Collapsible wrapper -->
+
     </div>
     <!-- Container wrapper -->
+</nav>
+<nav style="position: sticky; top: 0 ;width: 100%" class="navbar navbar-light bg-light">
+    <div style="justify-content: right" class="container-fluid">
+        <form method="post" action="/Product?action=searchProduct&typeId=${typeId}"     class="d-flex">
+            <input name="search" value="${search}" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
+    </div>
 </nav>
 <c:forEach var="product" items="${allProductList}">
 <div style="width: 100%;  height: 800px; margin-top: 30px"  class="row">
@@ -83,7 +95,7 @@
 
 
         <div style="width: 100%; height: auto" class="row">
-            <div class="col-lg-6 col-md-12"><img width="100%" ; src="${product.image}" class="rounded float-start" alt="..."></div>
+            <div class="col-lg-6 col-md-12"><img width="100%"  src="${product.image}" class="rounded float-start" alt="..."></div>
             <div  class="col-lg-6 col-md-12">
                 <div style="height: 100px" class="row">
                     <h2>${product.name}</h2>

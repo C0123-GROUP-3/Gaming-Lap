@@ -50,12 +50,17 @@
 
 
 
-<h1 style="text-align: center;margin-top:50px ">GAMING LAP MANAGEMENT</h1>
-<h3 style="text-align: center;margin-top:50px ">Edit Product</h3>
+<h1 style="text-align: center;margin-top:50px ">EDIT PRODUCT</h1>
+<h6  style="text-align: center; color: darkgreen"><b>
+    <c:if test="${check}" >
+        EDIT SUCCESSFULLY
+    </c:if></b>
+</h6>
 <div class="col-lg-2 col-sm-1"></div>
 <div class="col-lg-8 col-sm-10 " id="add">
     <form action="/Product?action=edit" method="post" class="text_left">
         <div hidden class="form-outline mb-4">
+
             <input value="${id}" name="id" type="text" id="form6Example" class="form-control" required/>
             <label class="form-label" for="form6Example">ID</label>
         </div>
@@ -89,11 +94,7 @@
             <label class="form-label" for="form6Example7">Additional description</label>
         </div>
         <button type="submit" class="btn btn-dark btn-block mb-4">Edit</button>
-        <h6 style="text-align: center; color: red">
-            <c:if test="${check}" >
-                EDIT SUCCESSFULLY
-            </c:if>
-        </h6>
+
     </form>
 </div>
 <div class="col-lg-2 col-sm-1"></div>

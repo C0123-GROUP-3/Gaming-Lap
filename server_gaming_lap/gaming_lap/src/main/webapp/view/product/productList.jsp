@@ -52,7 +52,7 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn" style="border: 1px solid #DDDDDD" onclick="window.location.href='/Product?action=create'">Add Product</button>
+                <button class="btn" style=" background-color: #1c651c; color: white" onclick="window.location.href='/Product?action=create'">Add Product</button>
             </div>
 
 
@@ -89,7 +89,8 @@
         <th>Update time</th>
         <th>Type of product</th>
         <th>Image</th>
-        <th>Action</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -105,8 +106,14 @@
             <td>${product.typeProduct.typeName}</td>
             <td><img class="img-product" src="${product.image}" alt=""></td>
             <th>
-                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-secondary">Edit</button>
-                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-warning">Edit</button>
+<%--                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">--%>
+
+                </button>
+            </th>
+            <th>
+<%--                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-primary">Edit</button>--%>
+                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Delete
                 </button>
             </th>
