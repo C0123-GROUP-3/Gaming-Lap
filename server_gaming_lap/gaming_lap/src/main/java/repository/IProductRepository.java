@@ -27,4 +27,6 @@ public interface IProductRepository {
     List<Product> headphoneList();
 
     List<Product> mouseList();
+
+    List<Product> searchName(String search);
 }
