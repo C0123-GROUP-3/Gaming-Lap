@@ -56,7 +56,7 @@
                                         </div>
                                     </div>
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
-                                        <p class="text-danger" >${requestScope.error}</p>
+                                        <h5 style="color:red;" >${requestScope.error}</h5>
                                     <div class="form-outline mb-4">
                                         <input required type="text" id="form2Example17" name="user" class="form-control form-control-lg" />
                                         <label class="form-label" for="form2Example17">

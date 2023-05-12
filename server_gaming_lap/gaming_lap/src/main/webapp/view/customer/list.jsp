@@ -29,7 +29,7 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn " style="border: 1px solid #DDDDDD;;background-color: darkgreen"
+                <button class="btn " style="border: 1px solid #DDDDDD;color: white;background-color: darkgreen"
                         onclick="window.location.href='/customer?action=create'">Add Customer
                 </button>
             </div>
@@ -50,7 +50,7 @@
 
     </div>
 </nav>
-<h1 style="text-align: center;">Customer Management</h1>
+<h1 style="text-align: center;margin-top: 2%">Customer Management</h1>
 <table id="tableCustomer" class="table table-striped table- bordered" style="width: 100%">
     <thead>
     <tr>

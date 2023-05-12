@@ -76,24 +76,20 @@
                                     <label class="form-label" for="form2Example7">
                                         Account</label>
                                 </div>
-
-                                <small style="color: red" id="checkUser"></small>
+                                <div id="checkUser" class="invalid-feedback" style="display: block;margin-top: -4%"></div>
 
                                 <div class="form-outline mb-4">
                                     <input required oninput="checkPasss()" type="password" id="form2Example8" name="pass" class="form-control form-control-lg" />
                                     <label class="form-label" for="form2Example8">
                                         PassWord</label>
-
                                 </div>
-                                <small style="color: red" id="checkPass"></small>
+                                <div id="checkPass" class="invalid-feedback" style="display: block;margin-top: -4%"></div>
                                 <div class="form-outline mb-4">
                                     <input required oninput="checkReRePasse()" type="password" id="form2Example9" name="repass" class="form-control form-control-lg" />
                                     <label class="form-label" for="form2Example9">
                                          Re-PassWord</label>
                                 </div>
-                                <small style="color: red;" id="checkRePass"></small>
-
-
+                                <div id="checkRePass" class="invalid-feedback" style="display: block;margin-top: -4%"></div>
                                 <div  hidden class="form-outline mb-4">
                                     <input required value="2" type="password" id="form2Example6" name="role" class="form-control form-control-lg" />
                                     <%--                                    <small style="color: red" id="checkPass"></small>--%>
@@ -108,8 +104,8 @@
                                 <c:if test="${requestScope.checkSign}">
                                     <h3 style="color:blue">Sign Up Success</h3>
                                 </c:if>
-                                <h3 style="color:red;">${mess}</h3>
-<%--                                <h3  style="color:red;">${usernames}</h3>--%>
+                                <h5 style="color:red;">${mess}</h5>
+                                <h5  style="color:red;">${usernames}</h5>
                                 <p class="mb-5 pb-lg-2" style="color: #393f81;">Do you already have an account ?<a href="/login.jsp" style="color: red;"> Login here</a></p>
                                 <div class="text-center">
                                     <p>or sign up with:</p>
