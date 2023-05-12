@@ -74,28 +74,33 @@
 <%--                                        <label class="form-label" for="form2Example4">Email</label>--%>
 <%--                                    </div>--%>
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkUser()" type="text" id="form2Example5" name="user" class="form-control form-control-lg" />
+                                    <input  type="text" id="form2Example5" name="user" class="form-control form-control-lg" />
 <%--                                    <small style="color: red" id="checkUser"></small>--%>
                                     <label class="form-label" for="form2Example5">
-                                        Account Email</label>
+                                        Account</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkPass()" type="password" id="form2Example6" name="pass" class="form-control form-control-lg" />
+                                    <input  type="password" id="form2Example6" name="pass" class="form-control form-control-lg" />
 <%--                                    <small style="color: red" id="checkPass"></small>--%>
                                     <label class="form-label" for="form2Example6">
                                         PassWord</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkPass()" type="password" id="form2Example6" name="repass" class="form-control form-control-lg" />
+                                    <input  type="password" id="form2Example6" name="repass" class="form-control form-control-lg" />
                                     <%--                                    <small style="color: red" id="checkPass"></small>--%>
                                     <label class="form-label" for="form2Example6">
                                          Re-PassWord</label>
                                 </div>
+                                <div  hidden class="form-outline mb-4">
+                                    <input value="2" type="password" id="form2Example6" name="role" class="form-control form-control-lg" />
+                                    <%--                                    <small style="color: red" id="checkPass"></small>--%>
+                                </div>
                                 <div class="pt-1 mb-4">
                                     <button class="btn btn-secondary btn-lg btn-block" type="submit">Sign Up</button>
                                 </div>
-                                <c:if test="${checkSign}">
-                                    <h3 style="color: red">Sign Up Success </h3>
+                                <c:if test="${requestScope.pass}">
+                                </c:if>
+                                <c:if test="${requestScope.check}">
                                 </c:if>
                                 <!-- Register buttons -->
 

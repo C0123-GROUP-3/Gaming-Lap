@@ -38,6 +38,9 @@
         width: 100px;
         height: 100px;
     }
+    a{
+        color: black;
+    }
     a:hover{
         color: #0a53be;
     }

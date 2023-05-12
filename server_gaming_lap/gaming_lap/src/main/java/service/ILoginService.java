@@ -6,11 +6,12 @@ import model.Role;
 import java.util.List;
 
 public interface ILoginService {
-    List<Account> getCheckRolesAccount();
+
     boolean saveLogin(Account login);
-    Account checkLogin(String user, String pass );
-    Role checkRole(String roleName);
+    Account checkLogin(String user, String pass, int role );
+
     Account checkLoginExit(String user);
-    boolean editLogin ( Account login );
+    List<Account> getCheckRolesAccount();
+
 
 }
