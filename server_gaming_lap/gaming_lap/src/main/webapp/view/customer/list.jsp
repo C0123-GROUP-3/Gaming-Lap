@@ -29,7 +29,7 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn " style="border: 1px solid #DDDDDD;;background-color: darkgreen"
+                <button class="btn " style="border: 1px solid #DDDDDD;color: white;background-color: darkgreen"
                         onclick="window.location.href='/customer?action=create'">Add Customer
                 </button>
             </div>
