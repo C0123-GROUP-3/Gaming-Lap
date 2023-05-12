@@ -18,7 +18,7 @@
       rel="stylesheet"/>
 <style>
     #add {
-        width: 60%;
+        width: 30%;
         margin: 0 auto;
         text-align: center;
     }
@@ -38,8 +38,12 @@
 <body>
 <div class="col-12"><jsp:include page="../../header_admin.jsp"></jsp:include></div>
 
-<h1 style="text-align: center;margin-top:50px ">GAMING LAP MANAGEMENT</h1>
-<h3 style="text-align: center;margin-top:50px ">Add New Product</h3>
+<h1 style="text-align: center;margin-top:50px ">ADD PRODUCT</h1>
+<h6 style="text-align: center; color: darkgreen">
+    <c:if test="${check}" >
+        ADDED SUCCESSFULLY
+    </c:if>
+</h6>
 <div class="col-lg-2 col-sm-1"></div>
 <div class="col-lg-8 col-sm-10 " id="add">
     <form action="/Product?action=create" method="post" class="text_left">
@@ -74,11 +78,7 @@
             <label class="form-label" for="form6Example7">Additional description</label>
         </div>
         <button type="submit" class="btn btn-dark btn-block mb-4">Create</button>
-        <h6 style="text-align: center; color: red">
-            <c:if test="${check}" >
-                ADDED SUCCESSFULLY
-            </c:if>
-        </h6>
+
     </form>
 </div>
 <div class="col-lg-2 col-sm-1"></div>
