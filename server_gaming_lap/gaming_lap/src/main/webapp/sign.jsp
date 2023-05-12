@@ -72,7 +72,7 @@
 <%--                                        <label class="form-label" for="form2Example4">Email</label>--%>
 <%--                                    </div>--%>
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkUsere()"  type="text" id="form2Example7" name="user" class="form-control form-control-lg" />
+                                    <input required oninput="checkUsere()"  type="text" id="form2Example7" name="user" class="form-control form-control-lg" />
                                     <label class="form-label" for="form2Example7">
                                         Account</label>
                                 </div>
@@ -80,14 +80,14 @@
                                 <small style="color: red" id="checkUser"></small>
 
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkPasss()" type="password" id="form2Example8" name="pass" class="form-control form-control-lg" />
+                                    <input required oninput="checkPasss()" type="password" id="form2Example8" name="pass" class="form-control form-control-lg" />
                                     <label class="form-label" for="form2Example8">
                                         PassWord</label>
 
                                 </div>
                                 <small style="color: red" id="checkPass"></small>
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkReRePasse()" type="password" id="form2Example9" name="repass" class="form-control form-control-lg" />
+                                    <input required oninput="checkReRePasse()" type="password" id="form2Example9" name="repass" class="form-control form-control-lg" />
                                     <label class="form-label" for="form2Example9">
                                          Re-PassWord</label>
                                 </div>
@@ -95,7 +95,7 @@
 
 
                                 <div  hidden class="form-outline mb-4">
-                                    <input value="2" type="password" id="form2Example6" name="role" class="form-control form-control-lg" />
+                                    <input required value="2" type="password" id="form2Example6" name="role" class="form-control form-control-lg" />
                                     <%--                                    <small style="color: red" id="checkPass"></small>--%>
                                 </div>
                                 <div class="pt-1 mb-4">

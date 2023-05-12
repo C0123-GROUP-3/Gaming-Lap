@@ -58,11 +58,11 @@
                             </span>
                         </div>
                     </button>
-<%--                    <div class="dropdown-content" style="margin-left: -90%">--%>
-<%--                        <a class="dropdown-item" href="" style="font-size: 20px">--%>
-<%--                            <i class="fa-solid fa-user fa-beat-fade"></i> My Account</a>--%>
-<%--                        <%=session.getAttribute("user") == null ?(""):("<a href='/logout'><i class=\"fa-solid fa-right-from-bracket fa-beat-fade\"></i> Log out</a>")%>--%>
-<%--                    </div>--%>
+                    <%--                    <div class="dropdown-content" style="margin-left: -90%">--%>
+                    <%--                        <a class="dropdown-item" href="" style="font-size: 20px">--%>
+                    <%--                            <i class="fa-solid fa-user fa-beat-fade"></i> My Account</a>--%>
+                    <%--                        <%=session.getAttribute("user") == null ?(""):("<a href='/logout'><i class=\"fa-solid fa-right-from-bracket fa-beat-fade\"></i> Log out</a>")%>--%>
+                    <%--                    </div>--%>
                 </div>
 
 
@@ -70,76 +70,79 @@
         </div>
     </nav>
 </header>
-<div style="position: sticky; top:0;z-index: 2">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-            <!-- Toggle button -->
-            <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarCenteredExample"
-                    aria-controls="navbarCenteredExample"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+<%--<div style="position: sticky; top:0;z-index: 2">--%>
+<%--    <nav class="navbar navbar-expand-lg navbar-light bg-light">--%>
+<%--        <!-- Container wrapper -->--%>
+<%--        <div class="container-fluid">--%>
+<%--            <!-- Toggle button -->--%>
+<%--            <button--%>
+<%--                    class="navbar-toggler"--%>
+<%--                    type="button"--%>
+<%--                    data-mdb-toggle="collapse"--%>
+<%--                    data-mdb-target="#navbarCenteredExample"--%>
+<%--                    aria-controls="navbarCenteredExample"--%>
+<%--                    aria-expanded="false"--%>
+<%--                    aria-label="Toggle navigation"--%>
+<%--            >--%>
+<%--                <i class="fas fa-bars"></i>--%>
+<%--            </button>--%>
 
-            <!-- Collapsible wrapper -->
-            <div
-                    class="collapse navbar-collapse justify-content-center"
-                    id="navbarCenteredExample"
-            >
-                <!-- Left links -->
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Product?action=laptopList">Laptop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Product?action=keyboardList">Keyboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                           href="/Product?action=headphoneList">Headphone</a>
-                    </li>
-                    <!-- Navbar dropdown -->
+<%--            <!-- Collapsible wrapper -->--%>
+<%--            <div--%>
+<%--                    class="collapse navbar-collapse justify-content-center"--%>
+<%--                    id="navbarCenteredExample"--%>
+<%--            >--%>
+<%--                <!-- Left links -->--%>
+<%--                <ul class="navbar-nav mb-2 mb-lg-0">--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page" href="/Product?action=laptopList">Laptop</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page" href="/Product?action=keyboardList">Keyboard</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page"--%>
+<%--                           href="/Product?action=headphoneList">Headphone</a>--%>
+<%--                    </li>--%>
+<%--                    <!-- Navbar dropdown -->--%>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Product?action=mouseList">Mouse</a>
-                    </li>
-                </ul>
-                <!-- Left links -->
-            </div>
-            <!-- Collapsible wrapper -->
-        </div>
-        <!-- Container wrapper -->
-    </nav>
-</div>
-<h3  style="color:red;text-align: center">${order}Successful purchase</h3>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page" href="/Product?action=mouseList">Mouse</a>--%>
+<%--                    </li>--%>
+<%--                </ul>--%>
+<%--                <!-- Left links -->--%>
+<%--            </div>--%>
+<%--            <!-- Collapsible wrapper -->--%>
+<%--        </div>--%>
+<%--        <!-- Container wrapper -->--%>
+<%--    </nav>--%>
+<%--</div>--%>
+<%--<h3  style="color:red;text-align: center">${order}Successful purchase</h3>--%>
 <div class="row" style="margin-top: 5%;">
     <div class="col-sm-6">
-        <div class="" style="margin-left: 20%">
-            <div class="card-body">
-
-                <div class="row">
+        <div class="card" style="margin-left: 20%;margin-top: -10%">
+            <div class="card-body" >
+<%--<c:forEach var="product" items="${allProductList}">--%>
+                <div class="row" >
                     <div class="col-sm-6">
-                        <div class="">
+                        <div class="card">
                             <div class="card-body">
                                 <div ><img width="100%"  src="https://i.dell.com/is/image/DellContent/content/dam/documents-and-videos/dv2/csbg/en/product-launch/alienware/alienware-x14-r2-gaming-notebook-intel/site-banners/cs2304g0003-616598-gl-cs-co-fy24q2-site-banner-aw-x14-r2-laptop-800x620-right.png?fmt=png-alpha&wid=800&hei=620" class="rounded float-start" alt="..."></div>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6" style="">
-                        <div class=" ">
-                            <div class="card-body">
-                                <div style="height: 100px" class="row">
-                                    <h2>${name}</h2>
+                    <div class="col-sm-6" >
+                        <div class="card ">
+                            <div class="card-body" >
+                                <div style="" class="row">
                                 </div>
                                 <div style="height: auto" class="row">
                                     <table class="table table-borderless">
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>${name}</td>
+                                        </tr>
                                         <tr>
                                             <td>ID</td>
                                             <td>${id}</td>
@@ -160,12 +163,13 @@
                                             <td>Price</td>
                                             <td>$${price}</td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <button  type="button" class="btn btn-danger" style="margin-left: 30%">DELETE</button>
+                                                </td>
+                                        </tr>
 
                                     </table>
-                                    <div class="form-outline mb-4">
-                                        <input type="number" id="quantity" name="quantity" min="1" max="100" class="form-control form-control-lg" />
-                                        <label class="form-label">Quantity</label>
-                                    </div>
                                     <%--                    <ul>--%>
                                     <%--                        <li>ID: ${id}</li>--%>
                                     <%--                        <li>Brand: ${brand}</li>--%>
@@ -178,42 +182,29 @@
                         </div>
                     </div>
                 </div>
+<%--    </c:forEach>--%>
             </div>
         </div>
     </div>
-    <div class="col-sm-6" style="width: 30%;margin-left: 10%;margin-top: -5%">
+    <div class="col-sm-6" style="width: 30%;margin-left: 10%;margin-top: 5%">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title" style="text-align: center">Special title treatment</h5>
                 <form action="/customer?action=create" method="post" class="text_left">
+                    <div class="form-outline mb-4">
+                        <input required oninput="checkPhone()" type="text" id="form6Example4" name="phone"
+                               class="form-control"/>
+                        <small style="color: red" id="checkPhone"></small>
+                        <label class="form-label" for="form6Example4">Id</label>
+                    </div>
                     <div class="form-outline mb-4">
                         <input required oninput="checkName()" type="text" id="form6Example3" name="name"
                                class="form-control "/>
                         <small style="color: red" id="checkName"></small>
                         <label class="form-label" for="form6Example3">Name</label>
                     </div>
-                    <div class="form-outline mb-4">
-                        <input required oninput="checkPhone()" type="text" id="form6Example4" name="phone"
-                               class="form-control"/>
-                        <small style="color: red" id="checkPhone"></small>
-                        <label class="form-label" for="form6Example4">Phone Number</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input required type="text" id="form6Example5" name="address" class="form-control"/>
-                        <label class="form-label" for="form6Example5">Address</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input required oninput="checkEmail()" type="text" id="form6Example6" name="email"
-                               class="form-control"/>
-                        <small style="color: red" id="checkEmail"></small>
-                        <label class="form-label" for="form6Example6">Email</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input   type="text" id="product" name="product"
-                               class="form-control"/>
-<%--                        <small style="color: red" id="checkEmail"></small>--%>
-                        <label class="form-label" for="product">ID Product</label>
-                    </div>
+
+
                     <div class="form-outline mb-4">
                         <input   type="text" id="quantity1" name="quantity1"
                                  class="form-control"/>
@@ -230,10 +221,10 @@
                     <%--            <small style="color: red" id="checkPass"></small>--%>
                     <%--            <label class="form-label" for="form6Example8">PassWord</label>--%>
                     <%--        </div>--%>
-                    <button type="submit" class="btn btn-success btn-block mb-4">ORDER</button>
+                    <button type="submit" class="btn btn-success btn-block mb-4">EDIT</button>
                 </form>
             </div>
-            <button type="button " onclick="window.location.href='/Product?action=allProductList'" class="btn btn-dark btn-block mb-4">BACK</button>
+<%--            <button type="button " onclick="window.location.href='/Product?action=allProductList'" class="btn btn-dark btn-block mb-4">BACK</button>--%>
 
         </div>
     </div>

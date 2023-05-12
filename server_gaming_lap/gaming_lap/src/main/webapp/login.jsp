@@ -58,12 +58,12 @@
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
                                         <p class="text-danger" >${requestScope.error}</p>
                                     <div class="form-outline mb-4">
-                                        <input  type="text" id="form2Example17" name="user" class="form-control form-control-lg" />
+                                        <input required type="text" id="form2Example17" name="user" class="form-control form-control-lg" />
                                         <label class="form-label" for="form2Example17">
                                             Account </label>
                                     </div>
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example27" name="pass" class="form-control form-control-lg" />
+                                        <input required type="password" id="form2Example27" name="pass" class="form-control form-control-lg" />
                                         <label class="form-label" for="form2Example27">Password</label>
                                     </div>
                                     <div  hidden class="form-outline mb-4">

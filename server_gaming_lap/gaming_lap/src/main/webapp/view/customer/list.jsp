@@ -29,7 +29,7 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn btn-success" style="border: 1px solid #DDDDDD;"
+                <button class="btn " style="border: 1px solid #DDDDDD;color: white;background-color: darkgreen"
                         onclick="window.location.href='/customer?action=create'">Add Customer
                 </button>
             </div>
@@ -75,7 +75,7 @@
             <td>${customerList.getCreateTime()}</td>
             <td>${customerList.getUpdateTime()}</td>
             <td colspan="2">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                         onclick="window.location.href='/customer?action=edit&id=${customerList.id}'"
                         data-bs-target="#updateModal">
                     EDIT
