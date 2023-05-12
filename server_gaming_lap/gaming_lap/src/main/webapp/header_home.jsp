@@ -24,7 +24,7 @@
           rel="stylesheet"/>
     <link rel="stylesheet" href="dropdown.css">
 </head>
-<header style="top:0;left: 0;right: 0;z-index: 2 ">
+<header style=";top:0;left: 0;right: 0;z-index:2 ">
     <nav style="background-color: black" class="navbar navbar-expand-lg navbar-dark ">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.jsp"><img style="height: 70px" width="55px"

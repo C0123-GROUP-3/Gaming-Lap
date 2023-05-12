@@ -47,36 +47,36 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <body>
-<h1 style="text-align: center;margin-top:50px ">GAMING LAP MANAGEMENT</h1>
+<jsp:include page="/header_admin.jsp"></jsp:include>
 <h3 style="text-align: center;margin-top:50px ">Add New Customer</h3>
 
 <div id="add">
   <form  method="post" class="text_left">
-    <div class="form-outline mb-4">
+    <div hidden class="form-outline mb-4">
       <fieldset disabled>
-      <input required type="text" id="form6Example2" name="id" value="${id}" class="form-control" />
+      <input hidden required type="text" id="form6Example2" name="id" value="${id}" class="form-control" />
       <label class="form-label" for="form6Example2">ID</label>
       </fieldset>
     </div>
     <div class="form-outline mb-4">
       <input required oninput="checkName()" type="text" id="form6Example3"name="name"value="${name}" class="form-control" />
-      <small style="color: red" id="checkName"></small>
       <label class="form-label" for="form6Example3">Name</label>
     </div>
+    <small style="color: red" id="checkName"></small>
     <div class="form-outline mb-4">
       <input required oninput="checkPhone()" type="number" id="form6Example4" name="phone"value="${phone}" class="form-control" />
-      <small style="color: red" id="checkPhone"></small>
       <label class="form-label" for="form6Example4">Phone Number</label>
     </div>
+    <small style="color: red" id="checkPhone"></small>
     <div class="form-outline mb-4">
       <input required type="text" id="form6Example5" name="address"value="${address}" class="form-control" />
       <label class="form-label" for="form6Example5">Address</label>
     </div>
     <div class="form-outline mb-4">
       <input required oninput="checkEmail()" type="email" id="form6Example6" name="email"value="${email}" class="form-control" />
-      <small style="color: red" id="checkEmail"></small>
       <label class="form-label" for="form6Example6">Email</label>
     </div>
+    <small style="color: red" id="checkEmail"></small>
 <%--    <div class="form-outline mb-4">--%>
 <%--      <input required oninput="checkUser()" type="text" id="form6Example7" name="user" value="${user}" class="form-control"/>--%>
 <%--      <small style="color: red" id="checkUser"></small>--%>

@@ -35,10 +35,6 @@
 <div style="width: 100%;  height: 800px" class="row">
     <div style="background-color: #e0e0e0" class="col-lg-2 col-md-1 col-sm"></div>
     <div  class="col-lg-8 col-md-10 col-sm-12">
-
-
-
-
         <div style="width: 100%; height: auto" class="row">
             <div class="row" style="height: auto; text-align: center; padding-bottom: 30px"><h1>Product Information</h1></div>
             <div style="background-color: white" class="col-lg-6 col-md-12"><img width="100%" ; src="${image}" class="rounded float-start" alt="..."></div>
