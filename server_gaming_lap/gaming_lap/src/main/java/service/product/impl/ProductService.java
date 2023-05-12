@@ -67,4 +67,9 @@ public class ProductService implements IProductService {
     public List<Product> mouseList() {
         return productRepository.mouseList();
     }
+
+    @Override
+    public List<Product> searchName(String search) {
+        return  productRepository.searchName(search);
+    }
 }
