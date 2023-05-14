@@ -50,9 +50,11 @@ public class OrderServlet extends HttpServlet {
     }
     private void createGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
+        String check = request.getParameter("check");
         List<Order> order = orderService.getOrder();
         List<Customer> customerList = orderService.getCustomerById(id);
         List<Product> productList = orderService.getProductList();
+        request.setAttribute("check",check);
         request.setAttribute("order",order);
         request.setAttribute("customerList", customerList);
         request.setAttribute("productList", productList);
@@ -80,7 +82,6 @@ public class OrderServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
-
         switch (action) {
             case "create":
                 createPost(request, response);
@@ -131,7 +132,7 @@ public class OrderServlet extends HttpServlet {
         int quantityProduct = Integer.parseInt(request.getParameter("quantity"));
         boolean check = orderService.saveOrderDetail(orderId, productId, quantityProduct);
         try {
-            response.sendRedirect("/OrderServlet?action=create&id=" + customerId);
+            response.sendRedirect("/OrderServlet?action=create&id=" + customerId + "&check=" + check);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

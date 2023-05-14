@@ -29,8 +29,8 @@
     <div class="container-fluid">
         <div style="display: flex; margin-top: 27px; margin-bottom:27px; position: relative">
             <div>
-                <button hidden class="btn" style="border: 1px solid #DDDDDD"
-                        onclick="window.location.href='/OrderCustomerServlet'">Add Order
+                <button  class="btn" style="border: 1px solid #DDDDDD"
+                        onclick="window.location.href='/OrderCustomerServlet'">Back
                 </button>
                 <form hidden action="/customer?action=sort" method="post" style="margin-left: 20px">
                                 <button class="btn" style="border: 1px solid #DDDDDD" type="button">Sort By Name</button>
@@ -46,7 +46,7 @@
         <%--                   placeholder="Search by phone number" aria-label="Search">--%>
         <%--            <button class="btn btn-secondary" type="submit">Search</button>--%>
         <%--        </form>--%>
-        <form class="d-flex" action="/OrderServlet?action=search" method="post">
+        <form class="d-flex" action="/OrderCustomerServlet?action=search" method="post">
             <input type="text" name="action" value="search" hidden>
             <input style="width: 15vw" class="form-control me-2" type="search" name="name" value="${name}"
                    placeholder="Search by Name" aria-label="Search">

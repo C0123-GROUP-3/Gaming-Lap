@@ -31,8 +31,8 @@
 </head>
 <body>
 <jsp:include page="../../header_admin.jsp"></jsp:include>
-<div style="width: 100%;  height: 800px" class="row">
-    <div style="background-color: #e0e0e0" class="col-lg-2 col-md-1 col-sm"></div>
+<div style="width: 100%; z-index: -1;  height: auto" class="row">
+    <div style="background-color: #e0e0e0;z-index: -2" class="col-lg-2 col-md-1 col-sm"></div>
     <div class="col-lg-8 col-md-10 col-sm-12">
         <div style="width: 100%; height: auto" class="row">
             <div class="row" style="height: auto; text-align: center; padding-bottom: 15px; margin-top: 15px">
@@ -56,12 +56,15 @@
             </div>
             <div class="row" style="margin-top: 30px;margin-left: 10px ">
                 <c:forEach items="${orderDetailList}" var="orderDetailList">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" style="z-index: -3">
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="${orderDetailList.product.image}" class="img-fluid rounded-start"
-                                         alt="...">
+                                    <div style="margin-top: 20px">
+                                        <img src="${orderDetailList.product.image}" class="img-fluid rounded-start"
+                                             alt="...">
+                                    </div>
+
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -78,7 +81,7 @@
             </div>
         </div>
     </div>
-    <div style="background-color: #e0e0e0" class="col-lg-2 col-md-1 col-sm"></div>
+    <div style="background-color: #e0e0e0;z-index: -2" class="col-lg-2 col-md-1 col-sm"></div>
 </div>
 <jsp:include page="../../footer_admin.jsp"></jsp:include>
 </body>
