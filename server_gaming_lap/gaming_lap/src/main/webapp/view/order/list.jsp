@@ -36,7 +36,7 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn" style="border: 1px solid #DDDDDD"
+                <button class="btn" style="border: 1px solid #DDDDDD; background-color: green; color: white"
                         onclick="window.location.href='/OrderCustomerServlet'">Add Order
                 </button>
             </div>
@@ -46,13 +46,13 @@
         </div>
         <div style="display: flex">
             <form class="d-flex" action="/OrderServlet?action=search" method="post">
-                <input style="width: 7vw" class="form-control me-2" type="search" name="id" value="${id}"
-                       placeholder="ID Order" aria-label="Search">
+                <%--                <input style="width: 7vw" class="form-control me-2" type="search" name="id" value="${id}"--%>
+                <%--                       placeholder="ID Order" aria-label="Search">--%>
                 <%--            <input style="width: 12vw" class="form-control me-2" type="search" name="name" value="${name}"--%>
                 <%--                   placeholder="Search by Name" aria-label="Search">--%>
                 <input style="width: 20vw" class="form-control me-2" type="search" name="phone" value="${phone}"
                        placeholder="Search by phone number Customer" aria-label="Search">
-                <button class="btn btn-secondary" type="submit">Search</button>
+                <button class="btn btn-primary" type="submit" style=" color: white">Search</button>
             </form>
         </div>
     </div>

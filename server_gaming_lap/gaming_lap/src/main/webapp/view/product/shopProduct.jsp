@@ -126,7 +126,7 @@
                     <div class="col-sm-6">
                         <div class="">
                             <div class="card-body">
-                                <div ><img width="100%"  src="https://i.dell.com/is/image/DellContent/content/dam/documents-and-videos/dv2/csbg/en/product-launch/alienware/alienware-x14-r2-gaming-notebook-intel/site-banners/cs2304g0003-616598-gl-cs-co-fy24q2-site-banner-aw-x14-r2-laptop-800x620-right.png?fmt=png-alpha&wid=800&hei=620" class="rounded float-start" alt="..."></div>
+                                <div ><img width="100%"  src="${image}" class="rounded float-start" alt="..."></div>
 
                             </div>
                         </div>
@@ -139,18 +139,12 @@
                                 </div>
                                 <div style="height: auto" class="row">
                                     <table class="table table-borderless">
-                                        <tr>
-                                            <td>ID</td>
-                                            <td>${id}</td>
-                                        </tr>
+
                                         <tr>
                                             <td>Brand</td>
                                             <td>${brand}</td>
                                         </tr>
-                                        <tr>
-                                            <td>Create time</td>
-                                            <td>${createTime}</td>
-                                        </tr>
+
                                         <tr>
                                             <td>Update time</td>
                                             <td>${updateTime}</td>

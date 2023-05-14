@@ -27,6 +27,9 @@ public class ProductServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "buy":
+                buy(request, response);
+                break;
             case "create":
                 request.setAttribute("typeProductList", typeProductList);
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/product/create.jsp");
@@ -37,10 +40,10 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "detail":
                 List<Product> productList = productService.getList();
-                int id = Integer.parseInt(request.getParameter("id"));
+                int id1 = Integer.parseInt(request.getParameter("id"));
                 for (int i = 0; i < productList.size(); i++) {
-                    if (id == productList.get(i).getId()) {
-                        request.setAttribute("id", id);
+                    if (id1 == productList.get(i).getId()) {
+                        request.setAttribute("id", id1);
                         request.setAttribute("name", productList.get(i).getName());
                         request.setAttribute("description", productList.get(i).getDescription());
                         request.setAttribute("price", productList.get(i).getPrice());
@@ -80,6 +83,25 @@ public class ProductServlet extends HttpServlet {
         }
 
 
+    }
+
+    private static void buy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        List<Product> allProductList = productService.getList();
+        for (int i = 0; i < allProductList.size(); i++) {
+            if (id == allProductList.get(i).getId()){
+                request.setAttribute("id", id);
+                request.setAttribute("name", allProductList.get(i).getName());
+                request.setAttribute("description", allProductList.get(i).getDescription());
+                request.setAttribute("price", allProductList.get(i).getPrice());
+                request.setAttribute("brand", allProductList.get(i).getBrand());
+                request.setAttribute("typeProduct", allProductList.get(i).getTypeProduct().getTypeName());
+                request.setAttribute("image", allProductList.get(i).getImage());
+                request.setAttribute("createTime", allProductList.get(i).getCreateTime());
+                request.setAttribute("updateTime", allProductList.get(i).getUpdateTime());
+                request.getRequestDispatcher("/view/product/shopProduct.jsp").forward(request, response);
+            }
+        }
     }
 
     private static void mouseList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -154,6 +176,8 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 int id = Integer.parseInt(request.getParameter("deleteId"));
                 productService.deleteProduct(id);
+                List<Product> productList = productService.getList();
+                request.setAttribute("productList",productList);
                 request.getRequestDispatcher("/view/product/productList.jsp").forward(request, response);
                 break;
             case "edit":

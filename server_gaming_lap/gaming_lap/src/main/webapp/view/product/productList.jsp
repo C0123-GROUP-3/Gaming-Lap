@@ -78,7 +78,7 @@
     </div>
 </nav>
 
-<h1 style="text-align: center;">Product Management</h1>
+<h1 style="margin-top: 40px;text-align: center;">Product Management</h1>
 
 <table id="tableProduct" class="table table-striped">
     <thead>
@@ -92,8 +92,7 @@
         <th>Update time</th>
         <th>Type of product</th>
         <th>Image</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
