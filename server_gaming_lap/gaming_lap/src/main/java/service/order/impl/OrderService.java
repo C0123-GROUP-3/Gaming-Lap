@@ -2,6 +2,7 @@ package service.order.impl;
 
 import model.Customer;
 import model.Order;
+import model.OrderDetail;
 import model.Product;
 import repository.order.IOrderRepository;
 import repository.order.impl.OrderRepository;
@@ -48,5 +49,25 @@ public class OrderService implements IOrderService {
     @Override
     public List<Order> getOrder() {
         return orderRepository.getOrder();
+    }
+
+    @Override
+    public List<Order> searchOrder(int id, String phone) {
+        return orderRepository.searchOrder(id, phone);
+    }
+
+    @Override
+    public List<Order> getInfoOrderById(int id) {
+        return orderRepository.getInfoOrderById(id);
+    }
+
+    @Override
+    public List<OrderDetail> getInfoOrderDetail(int id) {
+        return orderRepository.getInfoOrderDetail(id);
+    }
+
+    @Override
+    public List<Order> getTotalPrice(int id) {
+        return orderRepository.getTotalPrice(id);
     }
 }

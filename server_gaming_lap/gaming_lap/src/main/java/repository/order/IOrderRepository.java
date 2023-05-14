@@ -2,6 +2,7 @@ package repository.order;
 
 import model.Customer;
 import model.Order;
+import model.OrderDetail;
 import model.Product;
 
 import java.util.List;
@@ -25,4 +26,11 @@ public interface IOrderRepository {
 
     List<Order> getOrder();
 
+    List<Order> searchOrder(int id, String phone);
+
+    List<Order> getInfoOrderById(int id);
+
+    List<OrderDetail> getInfoOrderDetail(int id);
+
+    List<Order> getTotalPrice(int id);
 }
