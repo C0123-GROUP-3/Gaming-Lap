@@ -36,19 +36,19 @@
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn" style="border: 1px solid #DDDDDD"
+                <button class="btn" style="border: 1px solid #DDDDDD;background-color: darkgreen;color: white"
                         onclick="window.location.href='/OrderCustomerServlet'">Add Order
                 </button>
             </div>
-            <form action="/OrderServlet?action=sort" method="post" style="margin-left: 20px">
-                <button class="btn" style="border: 1px solid #DDDDDD" type="submit">Sort By Order Date</button>
+            <form action="/OrderServlet?action=sort" method="post" style="margin-left: 20px;background-color: darkgreen">
+                <button class="btn" style="border: 1px solid #DDDDDD;color: white;" type="submit">Sort By Order Date</button>
             </form>
         </div>
         <form class="d-flex" action="/user?action=search" method="post">
             <input type="text" name="action" value="search" hidden>
             <input style="width: 30vw" class="form-control me-2" type="search" name="phone" value="${phone}"
                    placeholder="Search by phone number customer" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">Search</button>
+            <button class="btn btn-primary" type="submit">Search</button>
         </form>
     </div>
 </nav>
@@ -62,7 +62,7 @@
         <th style="font-size: 20px">Create At</th>
         <th style="font-size: 20px">Update At</th>
         <th style="font-size: 20px">Total Price ($)</th>
-        <th style="font-size: 20px">Action</th>
+        <th style="font-size: 20px" colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -74,7 +74,7 @@
             <td>${orderList.createAt}</td>
             <td>${orderList.updateAt}</td>
             <td>${orderList.totalPrice} $</td>
-            <td colspan="2">
+            <td colspan="2" >
                 <form action="/OrderServlet?action=edit&id=${orderList.id}" method="post">
                 <button type="submit" class="btn btn-warning">
                     Edit

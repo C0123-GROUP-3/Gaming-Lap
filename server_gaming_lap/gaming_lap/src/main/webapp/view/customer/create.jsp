@@ -47,9 +47,9 @@
 
 <jsp:include page="/header_admin.jsp"></jsp:include>
 
-<h3 style="text-align: center;margin-top:50px ">Add New Customer</h3>
+<h2 style="text-align: center;margin-top:50px ">Add New Customer</h2>
 <c:if test="${check}">
-    <h3 style="color:blue;text-align: center">ADDED SUCCESSFULLY</h3>
+    <h5 style="color:green;text-align: center">ADDED SUCCESSFULLY</h5>
 </c:if>
 <div id="add">
     <form action="/customer?action=create" method="post" class="text_left">
@@ -57,12 +57,15 @@
             <input required oninput="checkName()" type="text" id="form6Example3" name="name" class="form-control"/>
             <label class="form-label" for="form6Example3">Name</label>
         </div>
-        <small style="color: red" id="checkName"></small>
+        <div id="checkName" class="invalid-feedback" style="display: block;margin-top: -1.5%"></div>
+
         <div class="form-outline mb-4">
             <input required oninput="checkPhone()" type="text" id="form6Example4" name="phone" class="form-control"/>
             <label class="form-label" for="form6Example4">Phone Number</label>
         </div>
-        <small style="color: red" id="checkPhone"></small>
+
+        <div id="checkPhone" class="invalid-feedback" style="display: block;margin-top: -1.5%"></div>
+
         <div class="form-outline mb-4">
             <input required type="text" id="form6Example5" name="address" class="form-control"/>
             <label class="form-label" for="form6Example5">Address</label>
@@ -71,7 +74,7 @@
             <input required  oninput="checkEmail()" type="text" id="form6Example6" name="email" class="form-control"/>
             <label class="form-label" for="form6Example6">Email</label>
         </div>
-
+        <div id="checkEmail" class="invalid-feedback" style="display: block;margin-top: -1.5%"></div>
 <%--        <div class="form-outline mb-4">--%>
 <%--            <input  required type="text" id="form6Example7" name="user" class="form-control"/>--%>
 <%--            <small style="color: red" id="checkUser"></small>--%>

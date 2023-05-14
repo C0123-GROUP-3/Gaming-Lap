@@ -123,7 +123,10 @@ public class LoginServlet extends HttpServlet {
         } else {
             boolean checkSign = iLoginService.saveLogin(login);
             login = iLoginService.checkLoginExit(user);
-//            request.setAttribute("checkSign", "sai");
+            request.setAttribute("usernames","Account name already exists");
+
+            request.getRequestDispatcher("/sign.jsp").forward(request, response);
+//
             if (login == null) {
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
             } else {
