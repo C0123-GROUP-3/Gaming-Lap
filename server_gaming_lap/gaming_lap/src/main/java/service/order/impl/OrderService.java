@@ -52,7 +52,7 @@ public class OrderService implements IOrderService {
     }
 
     @Override
-    public List<Order> searchOrder(int id, String phone) {
+    public List<Order> searchOrder(String id, String phone) {
         return orderRepository.searchOrder(id, phone);
     }
 

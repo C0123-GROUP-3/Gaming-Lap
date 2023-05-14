@@ -46,8 +46,8 @@
         </div>
         <div style="display: flex">
             <form class="d-flex" action="/OrderServlet?action=search" method="post">
-                <%--                <input style="width: 7vw" class="form-control me-2" type="search" name="id" value="${id}"--%>
-                <%--                       placeholder="ID Order" aria-label="Search">--%>
+                                <input style="width: 7vw" class="form-control me-2" type="search" name="id" value="${id}"
+                                       placeholder="ID Order" aria-label="Search">
                 <%--            <input style="width: 12vw" class="form-control me-2" type="search" name="name" value="${name}"--%>
                 <%--                   placeholder="Search by Name" aria-label="Search">--%>
                 <input style="width: 20vw" class="form-control me-2" type="search" name="phone" value="${phone}"
