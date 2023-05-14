@@ -95,7 +95,14 @@
 </body>
 </html>
 
-
+<script>
+    let check = ${check};
+    if (check===true){
+        alert("ADDED SUCCESSFULLY");
+    }else {
+        alert("CAN'T ADD THIS PRODUCT");
+    }
+</script>
 
 
 

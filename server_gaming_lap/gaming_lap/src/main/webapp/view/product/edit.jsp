@@ -121,3 +121,11 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/yourcode.js"></script>
+<script>
+    let check = ${check};
+    if (check===true){
+        alert("ADDED SUCCESSFULLY");
+    }else {
+        alert("CAN'T ADD THIS PRODUCT");
+    }
+</script>

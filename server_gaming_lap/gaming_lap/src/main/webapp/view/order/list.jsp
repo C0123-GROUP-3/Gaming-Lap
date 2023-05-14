@@ -31,25 +31,30 @@
         rel="stylesheet"
 />
 <body>
-<jsp:include page="../header_admin.jsp"></jsp:include>
+<jsp:include page="../../header_admin.jsp"></jsp:include>
 <nav class="navbar navbar-light bg-light" style="position: sticky; top:0;left: 0;right: 0">
     <div class="container-fluid">
         <div style="display: flex; margin: 8px;position: relative">
             <div>
-                <button class="btn" style="border: 1px solid #DDDDDD;background-color: darkgreen;color: white"
+                <button class="btn" style="border: 1px solid #DDDDDD"
                         onclick="window.location.href='/OrderCustomerServlet'">Add Order
                 </button>
             </div>
-            <form action="/OrderServlet?action=sort" method="post" style="margin-left: 20px;background-color: darkgreen">
-                <button class="btn" style="border: 1px solid #DDDDDD;color: white;" type="submit">Sort By Order Date</button>
+            <%--            <form action="/OrderServlet?action=sort" method="post" style="margin-left: 20px">--%>
+            <%--                <button class="btn" style="border: 1px solid #DDDDDD" type="submit">Sort By Order Date</button>--%>
+            <%--            </form>--%>
+        </div>
+        <div style="display: flex">
+            <form class="d-flex" action="/OrderServlet?action=search" method="post">
+                <input style="width: 7vw" class="form-control me-2" type="search" name="id" value="${id}"
+                       placeholder="ID Order" aria-label="Search">
+                <%--            <input style="width: 12vw" class="form-control me-2" type="search" name="name" value="${name}"--%>
+                <%--                   placeholder="Search by Name" aria-label="Search">--%>
+                <input style="width: 20vw" class="form-control me-2" type="search" name="phone" value="${phone}"
+                       placeholder="Search by phone number Customer" aria-label="Search">
+                <button class="btn btn-secondary" type="submit">Search</button>
             </form>
         </div>
-        <form class="d-flex" action="/user?action=search" method="post">
-            <input type="text" name="action" value="search" hidden>
-            <input style="width: 30vw" class="form-control me-2" type="search" name="phone" value="${phone}"
-                   placeholder="Search by phone number customer" aria-label="Search">
-            <button class="btn btn-primary" type="submit">Search</button>
-        </form>
     </div>
 </nav>
 <h1 style="text-align: center;margin-top:30px">Order Management</h1>
@@ -59,10 +64,11 @@
         <th style="font-size: 20px">#</th>
         <th style="font-size: 20px">ID</th>
         <th style="font-size: 20px">Customer Name</th>
+        <th style="font-size: 20px">Phone</th>
         <th style="font-size: 20px">Create At</th>
         <th style="font-size: 20px">Update At</th>
         <th style="font-size: 20px">Total Price ($)</th>
-        <th style="font-size: 20px" colspan="2">Action</th>
+        <th style="font-size: 20px">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -71,13 +77,14 @@
             <td>${status.count}</td>
             <td>${orderList.id}</td>
             <td>${orderList.customer.name}</td>
+            <td>${orderList.customer.phone}</td>
             <td>${orderList.createAt}</td>
             <td>${orderList.updateAt}</td>
             <td>${orderList.totalPrice} $</td>
-            <td colspan="2" >
-                <form action="/OrderServlet?action=edit&id=${orderList.id}" method="post">
-                <button type="submit" class="btn btn-warning">
-                    Edit
+            <td colspan="2">
+                <button type="submit" class="btn btn-warning"
+                        onclick="window.location.href='/OrderServlet?action=detail&id=${orderList.id}'">
+                    Detail
                 </button>
                 </form>
                 <button type="button" onclick="infoDelete('${orderList.id}')" class="btn btn-danger"
@@ -90,7 +97,7 @@
     </c:forEach>
     </tbody>
 </table>
-<jsp:include page="../footer_admin.jsp"></jsp:include>
+<jsp:include page="../../footer_admin.jsp"></jsp:include>
 <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="update"
      aria-hidden="true">
     <div class="modal-dialog">

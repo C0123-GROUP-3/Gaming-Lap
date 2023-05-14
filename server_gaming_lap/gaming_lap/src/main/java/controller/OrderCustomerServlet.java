@@ -1,4 +1,4 @@
-package controller.order;
+package controller;
 
 import model.Customer;
 import service.order.IOrderCustomerService;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @WebServlet(name = "OrderCustomerServlet", value = "/OrderCustomerServlet")
 public class OrderCustomerServlet extends HttpServlet {
-    public final IOrderCustomerService customerService = new OrderCustomerService();
+    private final IOrderCustomerService customerService = new OrderCustomerService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class OrderCustomerServlet extends HttpServlet {
         }
 
         switch (action) {
-            case "create":
+            case "search":
                 break;
             default:
                 showCustomerListToSelect(request, response);
@@ -33,7 +33,7 @@ public class OrderCustomerServlet extends HttpServlet {
     private void showCustomerListToSelect(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Customer> customerList = this.customerService.getAllCustomer();
         request.setAttribute("customerList", customerList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/order/orderCustomerList.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/order/orderCustomerList.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -43,5 +43,22 @@ public class OrderCustomerServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
+        switch (action) {
+            case "search":
+                searchCustomer(request, response);
+                break;
+            default:
+                showCustomerListToSelect(request, response);
+        }
+    }
+
+    private void searchCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        List<Customer> customerList = customerService.searchCustomer(name, phone);
+        request.setAttribute("name", name);
+        request.setAttribute("phone", phone);
+        request.setAttribute("customerList", customerList);
+        request.getRequestDispatcher("/view/order/orderCustomerList.jsp").forward(request, response);
     }
 }

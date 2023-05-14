@@ -73,62 +73,14 @@
         <!-- Container wrapper -->
     </nav>
 </div>
-
-
-<%--<div style="width: 100%;  height: 800px; margin-top: 30px"  class="row">--%>
-<%--    <div class="col-lg-2 col-md-1 col-sm"></div>--%>
-<%--    <div  class="col-lg-8 col-md-10 col-sm-12">--%>
-
-<%--        <div style="width: 100%; height: auto" class="row">--%>
-<%--            <div class="col-lg-6 col-md-12"><img width="100%" ; src="${product.image}" class="rounded float-start" alt="..."></div>--%>
-<%--            <div  class="col-lg-6 col-md-12">--%>
-<%--                <div style="height: 100px" class="row">--%>
-<%--                    <h2>${product.name}</h2>--%>
-<%--                </div>--%>
-<%--                <div style="height: auto" class="row">--%>
-<%--                    <table class="table table-borderless">--%>
-<%--                        <tr>--%>
-<%--                            <td>ID</td>--%>
-<%--                            <td>${product.id}</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Brand</td>--%>
-<%--                            <td>${product.brand}</td>--%>
-<%--                        </tr>--%>
-
-<%--                        <tr>--%>
-<%--                            <td>Update time</td>--%>
-<%--                            <td>${product.updateTime}</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Price</td>--%>
-<%--                            <td style="font-size: 30px; color: black"><b>$${product.price}</b></td>--%>
-<%--                        </tr>--%>
-<%--                    </table>--%>
-<%--                    &lt;%&ndash;                    <ul>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                        <li>ID: ${id}</li>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                        <li>Brand: ${brand}</li>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                        <li>Create time: ${createTime}</li>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                        <li>Update on: ${updateTime}</li>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                        <li>Price: ${price}</li>&ndash;%&gt;--%>
-<%--                    &lt;%&ndash;                    </ul>&ndash;%&gt;--%>
-<%--                </div>--%>
-<%--                <div class="row" style="height: auto">--%>
-<%--                    <h3>Description</h3>--%>
-<%--                    <p> ${product.description}</p></div>--%>
-<%--                <a href="/view/product/shopProduct.jsp"><button  type="button" class="btn btn-dark">Buy now</button></a>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-
-
-
-
-
-
-<%--    </div>--%>
-<%--    <div class="col-lg-2 col-md-1 col-sm"></div>--%>
-<%--</div>--%>
-<div class="row">
+<nav style="position: sticky; top: 0 ;width: 100%" class="navbar navbar-light bg-light">
+    <div style="justify-content: right" class="container-fluid">
+        <form method="post" action="/Product?action=searchProduct&typeId=${typeId}"     class="d-flex">
+            <input name="search" value="${search}" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 <c:forEach var="product" items="${allProductList}">
     <div class="container mt-5 mb-5">
         <div class="d-flex justify-content-center row">
@@ -156,7 +108,6 @@
         </div>
     </div>
 </c:forEach>
-</div>
 <jsp:include page="/footer_admin.jsp"></jsp:include>
 </body>
 </html>

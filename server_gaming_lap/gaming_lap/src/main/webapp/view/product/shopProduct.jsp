@@ -122,7 +122,6 @@
     <div class="col-sm-6">
         <div class="" style="margin-left: 20%">
             <div class="card-body">
-
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="">

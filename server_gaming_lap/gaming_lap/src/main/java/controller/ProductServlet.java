@@ -255,8 +255,12 @@ public class ProductServlet extends HttpServlet {
         Product product = new Product(id, name, description, price, brand, typeProduct, image);
         boolean check = productService.editProduct(product);
         request.setAttribute("check", check);
+
+
+        List<Product> productList = productService.getList();
+        request.setAttribute("productList", productList);
         request.setAttribute("typeProductList", typeProductList);
-        request.getRequestDispatcher("/view/product/edit.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/product/productList.jsp").forward(request, response);
     }
 
     private static void createProductPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
