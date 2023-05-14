@@ -154,6 +154,8 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 int id = Integer.parseInt(request.getParameter("deleteId"));
                 productService.deleteProduct(id);
+                List<Product> productList = productService.getList();
+                request.setAttribute("productList",productList);
                 request.getRequestDispatcher("/view/product/productList.jsp").forward(request, response);
                 break;
             case "edit":
