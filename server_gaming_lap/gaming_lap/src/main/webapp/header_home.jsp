@@ -69,12 +69,12 @@
             <span class="text-white">
                                             <%=session.getAttribute("user") == null ? (" <div class=\"dropdown\">\n" +
                                                     "                        <button style=\"color: white; font-size: 15px\" type=\"button\" class=\"btn  \" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\n" +
-                                                    "                         LOGIN / SIGN IN </button>\n" +
+                                                    "                         LOGIN / SIGN UP </button>\n" +
                                                     "                        <div class=\"dropdown-content\" >\n" +
                                                     "                            <a class=\"dropdown-item\" href=\"/login.jsp\" style=\"font-size: 20px\">\n" +
                                                     "                                <i class=\"fa-solid fa-circle-user fa-spin\"></i> Login</a>\n" +
                                                     "                            <a class=\"dropdown-item\" href=\"/sign.jsp\" style=\"font-size: 20px\">\n" +
-                                                    "                                <i class=\"fa-solid fa-user-plus fa-flip-horizontal\"></i> Sign In</a>\n" +
+                                                    "                                <i class=\"fa-solid fa-user-plus fa-flip-horizontal\"></i> Sign Up</a>\n" +
                                                     "                        </div>\n" +
                                                     "                    </div>") : ("<a href='/logout'></a>")%>
                                         </span>
