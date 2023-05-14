@@ -34,28 +34,30 @@ public class OrderServlet extends HttpServlet {
                 showList(request, response);
         }
     }
+
     private void getInfoOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         List<Order> totalPrice = orderService.getTotalPrice(id);
         List<Order> orderList = orderService.getInfoOrderById(id);
         List<OrderDetail> orderDetailList = orderService.getInfoOrderDetail(id);
-        request.setAttribute("totalPrice",totalPrice);
-        request.setAttribute("orderDetailList",orderDetailList);
-        request.setAttribute("orderList",orderList);
+        request.setAttribute("totalPrice", totalPrice);
+        request.setAttribute("orderDetailList", orderDetailList);
+        request.setAttribute("orderList", orderList);
         try {
-            request.getRequestDispatcher("/view/order/detail.jsp").forward(request,response);
+            request.getRequestDispatcher("/view/order/detail.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     private void createGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String check = request.getParameter("check");
         List<Order> order = orderService.getOrder();
         List<Customer> customerList = orderService.getCustomerById(id);
         List<Product> productList = orderService.getProductList();
-        request.setAttribute("check",check);
-        request.setAttribute("order",order);
+        request.setAttribute("check", check);
+        request.setAttribute("order", order);
         request.setAttribute("customerList", customerList);
         request.setAttribute("productList", productList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/order/createOrderDetail.jsp");
@@ -102,6 +104,7 @@ public class OrderServlet extends HttpServlet {
                 showList(request, response);
         }
     }
+
     private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("deleteId"));
         this.orderService.deleteOrder(id);
@@ -113,16 +116,14 @@ public class OrderServlet extends HttpServlet {
         String id = request.getParameter("id");
 //                String name = request.getParameter("name");
         String phone = request.getParameter("phone");
-        if(id!="" ||phone!=""){
-            List<Order> orderList = orderService.searchOrder(Integer.parseInt(id), phone);
-            request.setAttribute("id",id);
+        List<Order> orderList = orderService.searchOrder(id, phone);
+        request.setAttribute("id", id);
 //                request.setAttribute("name", name);
-            request.setAttribute("phone", phone);
-            request.setAttribute("orderList", orderList);
-            request.getRequestDispatcher("/view/order/list.jsp").forward(request, response);
-        }else {
-            showList(request, response);
-        }
+        request.setAttribute("phone", phone);
+        request.setAttribute("orderList", orderList);
+        request.getRequestDispatcher("/view/order/list.jsp").forward(request, response);
+
+
     }
 
     private void createOrderDetail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -137,6 +138,7 @@ public class OrderServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
     private void createPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         this.orderService.saveOrder(id);
