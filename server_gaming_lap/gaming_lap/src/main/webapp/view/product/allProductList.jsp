@@ -21,9 +21,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
       rel="stylesheet"/>
 <link rel="stylesheet" href="dropdown.css">
-<style>
-
-</style>
 <head>
     <title>laptops</title>
 </head>
@@ -31,61 +28,53 @@
 
 
 <jsp:include page="/header_home.jsp"></jsp:include>
+<div style="position: sticky; top:0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarCenteredExample"
+                    aria-controls="navbarCenteredExample"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
 
+            <!-- Collapsible wrapper -->
+            <div
+                    class="collapse navbar-collapse justify-content-center"
+                    id="navbarCenteredExample"
+            >
+                <!-- Left links -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Product?action=laptopList">Laptop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Product?action=keyboardList">Keyboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Product?action=headphoneList">Headphone</a>
+                    </li>
+                    <!-- Navbar dropdown -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Toggle button -->
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarCenteredExample"
-                aria-controls="navbarCenteredExample"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Collapsible wrapper -->
-        <div
-                class="collapse navbar-collapse justify-content-center"
-                id="navbarCenteredExample"
-        >
-            <!-- Left links -->
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/Product?action=laptopList">Laptop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/Product?action=keyboardList">Keyboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/Product?action=headphoneList">Headphone</a>
-                </li>
-                <!-- Navbar dropdown -->
-
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/Product?action=mouseList">Mouse</a>
-                </li>
-            </ul>
-            <!-- Left links -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Product?action=mouseList">Mouse</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+            </div>
+            <!-- Collapsible wrapper -->
         </div>
-        <!-- Collapsible wrapper -->
+        <!-- Container wrapper -->
+    </nav>
+</div>
 
-    </div>
-    <!-- Container wrapper -->
-</nav>
-<nav style="position: sticky; top: 0 ;width: 100%" class="navbar navbar-light bg-light">
-    <div style="justify-content: right" class="container-fluid">
-        <form method="post" action="/Product?action=searchProduct&typeId=${typeId}"     class="d-flex">
-            <input name="search" value="${search}" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
 <c:forEach var="product" items="${allProductList}">
 <div style="width: 100%;  height: 800px; margin-top: 30px"  class="row">
     <div class="col-lg-2 col-md-1 col-sm"></div>
@@ -95,7 +84,7 @@
 
 
         <div style="width: 100%; height: auto" class="row">
-            <div class="col-lg-6 col-md-12"><img width="100%"  src="${product.image}" class="rounded float-start" alt="..."></div>
+            <div class="col-lg-6 col-md-12"><img width="100%" ; src="${product.image}" class="rounded float-start" alt="..."></div>
             <div  class="col-lg-6 col-md-12">
                 <div style="height: 100px" class="row">
                     <h2>${product.name}</h2>
