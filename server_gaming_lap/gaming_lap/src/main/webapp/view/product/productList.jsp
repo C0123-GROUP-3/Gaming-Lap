@@ -180,15 +180,10 @@
     } );
 </script>
 <script>
-    let check = ${checkCreate};
-    if (check===true){
-        console.log("ADDED SUCCESSFULLY")
-    }
-</script>
-<script>
     let check = ${check};
     if (check===true){
         alert("EDITED SUCCESSFULLY");
+
     }else {
         alert("CAN'T EDIT THIS PRODUCT");
     }
