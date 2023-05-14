@@ -74,7 +74,14 @@
         <!-- Container wrapper -->
     </nav>
 </div>
-
+<nav style="position: sticky; top: 0 ;width: 100%" class="navbar navbar-light bg-light">
+    <div style="justify-content: right" class="container-fluid">
+        <form method="post" action="/Product?action=searchProduct&typeId=${typeId}"     class="d-flex">
+            <input name="search" value="${search}" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 <c:forEach var="product" items="${allProductList}">
 <div style="width: 100%;  height: 800px; margin-top: 30px"  class="row">
     <div class="col-lg-2 col-md-1 col-sm"></div>
