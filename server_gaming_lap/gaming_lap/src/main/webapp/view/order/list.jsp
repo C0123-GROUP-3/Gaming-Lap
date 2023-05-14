@@ -44,7 +44,7 @@
             <%--                <button class="btn" style="border: 1px solid #DDDDDD" type="submit">Sort By Order Date</button>--%>
             <%--            </form>--%>
         </div>
-        <div style="display: flex; margin-top:12px">
+        <div style="display: flex">
             <form class="d-flex" action="/OrderServlet?action=search" method="post">
                 <input style="width: 7vw" class="form-control me-2" type="search" name="id" value="${id}"
                        placeholder="ID Order" aria-label="Search">

@@ -27,7 +27,7 @@
 <jsp:include page="/header_admin.jsp"></jsp:include>
 <nav class="navbar navbar-light bg-light" style="position: sticky;top:0;left: 0;right: 0">
     <div class="container-fluid">
-        <div style="display: flex; margin-top: 27px; margin-bottom:27px; position: relative">
+        <div style="display: flex; margin: 8px; position: relative">
             <div>
                 <button  class="btn" style="border: 1px solid #DDDDDD"
                         onclick="window.location.href='/OrderCustomerServlet'">Back
