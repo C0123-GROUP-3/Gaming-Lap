@@ -83,7 +83,7 @@
             <td>${customerList.getUpdateTime()}</td>
             <td colspan="1">
                 <form action="/OrderServlet?action=create&id=${customerList.id}" method="post">
-                    <button type="submit" class="btn btn-secondary">
+                    <button type="submit" class="btn btn-success">
                         Select
                     </button>
                 </form>
