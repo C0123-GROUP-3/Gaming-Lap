@@ -65,12 +65,12 @@
                 <span class="text-white">
                                             <%=session.getAttribute("user") == null ? (" <div class=\"dropdown\">\n" +
                                                     "                        <button style=\"color: white; font-size: 15px\" type=\"button\" class=\"btn  \" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\n" +
-                                                    "                         LOGIN / SIGN IN </button>\n" +
+                                                    "                         LOGIN / SIGN UP </button>\n" +
                                                     "                        <div class=\"dropdown-content\" >\n" +
                                                     "                            <a class=\"dropdown-item\" href=\"/login.jsp\" style=\"font-size: 20px\">\n" +
                                                     "                                <i class=\"fa-solid fa-circle-user fa-spin\"></i> Login</a>\n" +
                                                     "                            <a class=\"dropdown-item\" href=\"/sign.jsp\" style=\"font-size: 20px\">\n" +
-                                                    "                                <i class=\"fa-solid fa-user-plus fa-flip-horizontal\"></i> Sign In</a>\n" +
+                                                    "                                <i class=\"fa-solid fa-user-plus fa-flip-horizontal\"></i> Sign Up</a>\n" +
                                                     "                        </div>\n" +
                                                     "                    </div>") : ("<a href='/logout'></a>")%>
                                         </span>
@@ -206,7 +206,7 @@
         </div>
         <div>
             <div style="display: flex;margin-top: 20px">
-                <div class="card bg-dark text-white" style="border: none;">
+                <div class="card bg-dark text-white" style="border: none;width: 50%">
                     <img src="https://cdn.tgdd.vn/Files/2022/07/21/1449414/alienwarem17r5anhminhhoa_1280x720-800-resize.jpg"
                          class="card-img" alt="...">
                     <div class="card-img-overlay">
@@ -217,7 +217,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="card bg-dark text-white" style="border: none;">
+                <div class="card bg-dark text-white" style="border: none;width: 50%">
                     <img src="https://cdn.tgdd.vn/Files/2022/03/30/1423113/laptop-alienware-x15-r2_1280x720-800-resize.png"
                          class="card-img" alt="...">
                     <div class="card-img-overlay">
@@ -244,21 +244,21 @@
             </div>
         </div>
         <div class="" style="display: flex">
-            <div class=" text-center" style="width: 32em;">
+            <div class=" text-center" style="width: 34em;">
                 <div class="">
                     <img  style="" src="https://dlcdnwebimgs.asus.com/gain/6D83B350-83FE-4AFF-96A9-69693B9B255E/w750/h470"
                          class="card-img" alt="...">
 
                 </div>
             </div>
-            <div class=" text-center" style="width: 32em;">
+            <div class=" text-center" style="width: 34em;">
                 <div class="">
                     <img src="https://dlcdnwebimgs.asus.com/gain/4BB18AEF-347E-4DB6-B78C-C0FFE1F20385/w750/h470"
                          class="card-img" alt="...">
                 </div>
             </div>
 
-            <div class=" text-end" style="width: 32rem;">
+            <div class=" text-end" style="width: 34rem;">
                 <div class="">
                     <img   src="  https://dlcdnwebimgs.asus.com/gain/08B956D7-479C-4E95-B8A1-43A1E814CD23/w750/h470"
                          class="card-img" alt="...">
