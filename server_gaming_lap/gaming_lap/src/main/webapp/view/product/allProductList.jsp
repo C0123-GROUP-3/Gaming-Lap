@@ -21,12 +21,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
       rel="stylesheet"/>
 <link rel="stylesheet" href="dropdown.css">
+<link rel="stylesheet" href="product.css">
 <head>
     <title>laptops</title>
 </head>
 <body>
-
-
 <jsp:include page="/header_home.jsp"></jsp:include>
 <div style="position: sticky; top:0">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -83,62 +82,31 @@
     </div>
 </nav>
 <c:forEach var="product" items="${allProductList}">
-<div style="width: 100%;  height: 800px; margin-top: 30px"  class="row">
-    <div class="col-lg-2 col-md-1 col-sm"></div>
-    <div  class="col-lg-8 col-md-10 col-sm-12">
-
-
-
-
-        <div style="width: 100%; height: auto" class="row">
-            <div class="col-lg-6 col-md-12"><img width="100%" ; src="${product.image}" class="rounded float-start" alt="..."></div>
-            <div  class="col-lg-6 col-md-12">
-                <div style="height: 100px" class="row">
-                    <h2>${product.name}</h2>
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="row p-2 bg-white border rounded">
+                    <div class="col-md-3 mt-1"><img width="100%" ; src="${product.image}" class="rounded float-start" alt="..."></div>
+                    <div class="col-md-6 mt-1">
+                        <h2>${product.name}</h2>
+                        <div class="d-flex flex-row">
+                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                        </div>
+                        <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
+                        <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
+                        <p class="text-justify text-truncate para mb-0">${product.description}</p>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <h4 class="mr-1">$${product.price}</h4>
+                        </div>
+                        <h6 class="text-success">Free shipping</h6>
+                        <div class="d-flex flex-column mt-4"><button onclick="window.location.href='/Product?action=buy&id=${product.id}'" class="btn btn-dark btn-sm" type="button">Buy Now</button></a><button class="btn btn-outline-dark btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    </div>
                 </div>
-                <div style="height: auto" class="row">
-                    <table class="table table-borderless">
-                        <tr>
-                            <td>ID</td>
-                            <td>${product.id}</td>
-                        </tr>
-                        <tr>
-                            <td>Brand</td>
-                            <td>${product.brand}</td>
-                        </tr>
-
-                        <tr>
-                            <td>Update time</td>
-                            <td>${product.updateTime}</td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td style="font-size: 30px; color: black"><b>$${product.price}</b></td>
-                        </tr>
-                    </table>
-                    <%--                    <ul>--%>
-                    <%--                        <li>ID: ${id}</li>--%>
-                    <%--                        <li>Brand: ${brand}</li>--%>
-                    <%--                        <li>Create time: ${createTime}</li>--%>
-                    <%--                        <li>Update on: ${updateTime}</li>--%>
-                    <%--                        <li>Price: ${price}</li>--%>
-                    <%--                    </ul>--%>
-                </div>
-                <div class="row" style="height: auto">
-                    <h3>Description</h3>
-                    <p> ${product.description}</p></div>
-                <a href="/view/product/shopProduct.jsp"><button  type="button" class="btn btn-dark">Buy now</button></a>
             </div>
         </div>
-
-
-
-
-
-
     </div>
-    <div class="col-lg-2 col-md-1 col-sm"></div>
-</div>
 </c:forEach>
 <jsp:include page="/footer_admin.jsp"></jsp:include>
 </body>
