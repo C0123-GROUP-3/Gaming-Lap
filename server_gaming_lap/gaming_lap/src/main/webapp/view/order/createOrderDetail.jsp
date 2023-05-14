@@ -130,15 +130,15 @@
                    min="1" max="100" id="quantity"
                    class="form-control" required/>
         </div>
-        <button type="submit" class="btn btn-dark btn-block mb-4">Create</button>
-        <button type="button" style="background-color: rgba(74,175,65,0.85)" class="btn btn-block mb-4"
-                onclick="window.location.href='/OrderServlet'">Done
-        </button>
         <h6 style="text-align: center; color: mediumseagreen">
             <c:if test="${check}">
                 ADDED SUCCESSFULLY
             </c:if>
         </h6>
+        <button type="submit" class="btn btn-dark btn-block mb-4">Create</button>
+        <button type="button" style="background-color: rgba(74,175,65,0.85)" class="btn btn-block mb-4"
+                onclick="window.location.href='/OrderServlet'">Done
+        </button>
     </form>
 </div>
 <div class="col-lg-2 col-sm-1"></div>
