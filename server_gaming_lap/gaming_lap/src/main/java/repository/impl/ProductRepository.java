@@ -15,6 +15,10 @@ import java.util.List;
 
 public class ProductRepository implements IProductRepository {
     private static final String GET_LIST = "SELECT * FROM product AS p LEFT JOIN type_product AS TP ON TP.type_id = p.type_id;";
+    private static final String GET_LAP_LIST = "SELECT * FROM product INNER JOIN type_product TP ON product.type_id = TP.type_id WHERE TP.type_id = 1;";
+    private static final String GET_HEADPHONE_LIST = "SELECT * FROM product INNER JOIN type_product TP ON product.type_id = TP.type_id WHERE TP.type_id = 4;";
+    private static final String GET_KEYBOARD_LIST = "SELECT * FROM product INNER JOIN type_product TP ON product.type_id = TP.type_id WHERE TP.type_id = 2;";
+    private static final String GET_MOUSE_LIST = "SELECT * FROM product INNER JOIN type_product TP ON product.type_id = TP.type_id WHERE TP.type_id = 3;";
 
     private static final String GET_TYPE_PRODUCT = "SELECT * FROM type_product;";
     private static final String DELETE_PRODUCT_BY_ID = "DELETE FROM product WHERE id = ?;";
@@ -22,6 +26,7 @@ public class ProductRepository implements IProductRepository {
     private static final String UPDATE_BY_ID = "UPDATE product SET name = ?, description = ?, price = ? , brand = ?, type_id = ?, image = ?, update_time = ? WHERE id = ?;";
     private static final String SEARCH = "SELECT  * FROM product WHERE type_id LIKE ?  AND name LIKE ?;";
     private static final String SORT_PRICE = "SELECT * FROM product ORDER BY price;";
+    private static final String SEARCH_NAME = "SELECT * FROM product WHERE name LIKE ?;";
 
 
     @Override
@@ -181,5 +186,141 @@ public class ProductRepository implements IProductRepository {
 
 
         return typeProductList;
+    }
+
+    @Override
+    public List<Product> keyboardList() {
+        Connection connection = BaseRepository.getConnection();
+        List<Product> productList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_KEYBOARD_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String description = resultSet.getString("description");
+                double price = resultSet.getDouble("price");
+                String brand = resultSet.getString("brand");
+                int typeProductId = resultSet.getInt("type_id");
+                TypeProduct typeProduct1 = new TypeProduct(typeProductId);
+                String image = resultSet.getString("image");
+                String createTime = resultSet.getString("create_time");
+                String updateTime = resultSet.getString("update_time");
+                Product product = new Product(id, name, description, price, brand, typeProduct1, image, createTime, updateTime);
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
+    }
+
+    @Override
+    public List<Product> laptopList() {
+        Connection connection = BaseRepository.getConnection();
+        List<Product> productList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_LAP_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String description = resultSet.getString("description");
+                double price = resultSet.getDouble("price");
+                String brand = resultSet.getString("brand");
+                int typeProductId = resultSet.getInt("type_id");
+                TypeProduct typeProduct1 = new TypeProduct(typeProductId);
+                String image = resultSet.getString("image");
+                String createTime = resultSet.getString("create_time");
+                String updateTime = resultSet.getString("update_time");
+                Product product = new Product(id, name, description, price, brand, typeProduct1, image, createTime, updateTime);
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
+    }
+
+    @Override
+    public List<Product> headphoneList() {
+        Connection connection = BaseRepository.getConnection();
+        List<Product> productList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_HEADPHONE_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String description = resultSet.getString("description");
+                double price = resultSet.getDouble("price");
+                String brand = resultSet.getString("brand");
+                int typeProductId = resultSet.getInt("type_id");
+                TypeProduct typeProduct1 = new TypeProduct(typeProductId);
+                String image = resultSet.getString("image");
+                String createTime = resultSet.getString("create_time");
+                String updateTime = resultSet.getString("update_time");
+                Product product = new Product(id, name, description, price, brand, typeProduct1, image, createTime, updateTime);
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
+    }
+
+    @Override
+    public List<Product> mouseList() {
+        Connection connection = BaseRepository.getConnection();
+        List<Product> productList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_MOUSE_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String description = resultSet.getString("description");
+                double price = resultSet.getDouble("price");
+                String brand = resultSet.getString("brand");
+                int typeProductId = resultSet.getInt("type_id");
+                TypeProduct typeProduct1 = new TypeProduct(typeProductId);
+                String image = resultSet.getString("image");
+                String createTime = resultSet.getString("create_time");
+                String updateTime = resultSet.getString("update_time");
+                Product product = new Product(id, name, description, price, brand, typeProduct1, image, createTime, updateTime);
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
+    }
+
+    @Override
+    public List<Product> searchName(String search) {
+        Connection connection = BaseRepository.getConnection();
+        List<Product> productList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_NAME);
+            preparedStatement.setString(1,'%'+search + '%');
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String description = resultSet.getString("description");
+                double price = resultSet.getDouble("price");
+                String brand = resultSet.getString("brand");
+                int typeProductId = resultSet.getInt("type_id");
+                TypeProduct typeProduct1 = new TypeProduct(typeProductId);
+                String image = resultSet.getString("image");
+                String createTime = resultSet.getString("create_time");
+                String updateTime = resultSet.getString("update_time");
+                Product product = new Product(id, name, description, price, brand, typeProduct1, image, createTime, updateTime);
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
     }
 }

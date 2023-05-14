@@ -86,6 +86,7 @@
                         onclick="window.location.href='/OrderServlet?action=detail&id=${orderList.id}'">
                     Detail
                 </button>
+                </form>
                 <button type="button" onclick="infoDelete('${orderList.id}')" class="btn btn-danger"
                         data-bs-toggle="modal"
                         data-bs-target="#deleteModal">

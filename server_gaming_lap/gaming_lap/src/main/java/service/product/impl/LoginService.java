@@ -9,12 +9,8 @@ import service.ILoginService;
 import java.util.List;
 
 public class LoginService implements ILoginService {
- private static  ILoginRepository iLoginRepository=new LoginRepository();
-    @Override
-    public List<Account> getCheckRolesAccount() {
-        List<Account> loginList=iLoginRepository.getCheckRolesAccount();
-        return loginList;
-    }
+    private static  ILoginRepository iLoginRepository=new LoginRepository();
+
 
     @Override
     public boolean saveLogin(Account login) {
@@ -22,14 +18,11 @@ public class LoginService implements ILoginService {
     }
 
     @Override
-    public Account checkLogin(String user, String pass) {
-        return iLoginRepository.checkLogin(user, pass);
+    public Account checkLogin(String user, String pass,int role) {
+        return iLoginRepository.checkLogin(user, pass,role);
     }
 
-    @Override
-    public Role checkRole(String roleName) {
-        return iLoginRepository.checkRole(roleName);
-    }
+
 
 
     @Override
@@ -38,8 +31,8 @@ public class LoginService implements ILoginService {
     }
 
     @Override
-    public boolean editLogin(Account login) {
-        return false;
+    public List<Account> getCheckRolesAccount() {
+        return iLoginRepository.getCheckRolesAccount();
     }
 
 

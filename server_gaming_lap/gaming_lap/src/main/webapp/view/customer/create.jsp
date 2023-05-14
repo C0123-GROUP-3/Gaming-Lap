@@ -23,6 +23,7 @@
 <!-- MDB -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
       rel="stylesheet"/>
+
 <style>
     #add {
         width: 40vw;
@@ -43,47 +44,49 @@
     }
 </style>
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<jsp:include page="/header_admin.jsp"></jsp:include>
-<body>
-<h3 style="text-align: center;margin-top:50px ">Add New Customer</h3>
 
+<jsp:include page="/header_admin.jsp"></jsp:include>
+
+<h2 style="text-align: center;margin-top:50px ">Add New Customer</h2>
+<c:if test="${check}">
+    <h5 style="color:green;text-align: center">ADDED SUCCESSFULLY</h5>
+</c:if>
 <div id="add">
     <form action="/customer?action=create" method="post" class="text_left">
         <div class="form-outline mb-4">
             <input required oninput="checkName()" type="text" id="form6Example3" name="name" class="form-control"/>
-            <small style="color: red" id="checkName"></small>
             <label class="form-label" for="form6Example3">Name</label>
         </div>
+        <div id="checkName" class="invalid-feedback" style="display: block;margin-top: -1.5%"></div>
+
         <div class="form-outline mb-4">
             <input required oninput="checkPhone()" type="text" id="form6Example4" name="phone" class="form-control"/>
-            <small style="color: red" id="checkPhone"></small>
             <label class="form-label" for="form6Example4">Phone Number</label>
         </div>
+
+        <div id="checkPhone" class="invalid-feedback" style="display: block;margin-top: -1.5%"></div>
+
         <div class="form-outline mb-4">
             <input required type="text" id="form6Example5" name="address" class="form-control"/>
             <label class="form-label" for="form6Example5">Address</label>
         </div>
         <div class="form-outline mb-4">
             <input required  oninput="checkEmail()" type="text" id="form6Example6" name="email" class="form-control"/>
-            <small style="color: red" id="checkEmail"></small>
             <label class="form-label" for="form6Example6">Email</label>
         </div>
-        <div class="form-outline mb-4">
-            <input  required type="text" id="form6Example7" name="user" class="form-control"/>
-            <small style="color: red" id="checkUser"></small>
-            <label class="form-label" for="form6Example7">Account </label>
-        </div>
-        <div class="form-outline mb-4">
-            <input  required oninput="checkPass()" type="text" id="form6Example8" name="pass" class="form-control"/>
-            <small style="color: red" id="checkPass"></small>
-            <label class="form-label" for="form6Example8">PassWord</label>
-        </div>
+        <div id="checkEmail" class="invalid-feedback" style="display: block;margin-top: -1.5%"></div>
+<%--        <div class="form-outline mb-4">--%>
+<%--            <input  required type="text" id="form6Example7" name="user" class="form-control"/>--%>
+<%--            <small style="color: red" id="checkUser"></small>--%>
+<%--            <label class="form-label" for="form6Example7">Account </label>--%>
+<%--        </div>--%>
+<%--        <div class="form-outline mb-4">--%>
+<%--            <input  required oninput="checkPass()" type="text" id="form6Example8" name="pass" class="form-control"/>--%>
+<%--            <small style="color: red" id="checkPass"></small>--%>
+<%--            <label class="form-label" for="form6Example8">PassWord</label>--%>
+<%--        </div>--%>
         <button type="submit" class="btn btn-dark btn-block mb-4">Create</button>
-      <c:if test="${check}">
-          <h3 style="color:red;">Successfully added new</h3>
-      </c:if>
+
     </form>
 </div>
 
@@ -149,27 +152,8 @@
         } else {
             document.getElementById("checkPass").innerText = "The Pass Word is not in the correct format";
         }
+
     }
-
-    // check rỗng
-    function checkEmptyError(listInput) {
-        let isEmptyError=false;
-        listInput.forEach(input => {
-        input.value=input.value.trim()
-            if (!input.value){
-                isEmptyError=true;
-                checkName(input,'Không được để trống');
-        }else {
-
-            }
-    })
-
-    };
-
-    // form.addEventListener('submit', function (e) {
-    //     e.preventDefault()
-    //     checkEmptyError([nameCustomer, passCustomer, addressCustomer, emailCustomer, userCustomer, passCustomer])
-    // });
 
 </script>
 </body>

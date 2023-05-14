@@ -32,14 +32,12 @@
             <div class="row gx-lg-5 align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h1 class="my-5 display-3 fw-bold ls-tight">
-                        The best offer <br />
-                        <span class="text-primary">for your business</span>
+                        Welcome you to <br />
+                        <span class="text-primary">the technology world</span>
                     </h1>
                     <p style="color: hsl(217, 10%, 50.8%)">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eveniet, itaque accusantium odio, soluta, corrupti aliquam
-                        quibusdam tempora at cupiditate quis eum maiores libero
-                        veritatis? Dicta facilis sint aliquid ipsum atque?
+                        with all the passion to technology, we will provide to you the best product of gaming region.
+                        We have enough gear and computer for your best gaming experience. Hopefully, you can have your favorite gaming computer or gear which products we provide here.
                     </p>
                 </div>
                 <div class="col-lg-6 mb-5 mb-lg-0">
@@ -74,32 +72,40 @@
 <%--                                        <label class="form-label" for="form2Example4">Email</label>--%>
 <%--                                    </div>--%>
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkUser()" type="text" id="form2Example5" name="user" class="form-control form-control-lg" />
-<%--                                    <small style="color: red" id="checkUser"></small>--%>
-                                    <label class="form-label" for="form2Example5">
-                                        Account Email</label>
+                                    <input required oninput="checkUsere()"  type="text" id="form2Example7" name="user" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form2Example7">
+                                        Account</label>
                                 </div>
+                                <div id="checkUser" class="invalid-feedback" style="display: block;margin-top: -4%"></div>
+
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkPass()" type="password" id="form2Example6" name="pass" class="form-control form-control-lg" />
-<%--                                    <small style="color: red" id="checkPass"></small>--%>
-                                    <label class="form-label" for="form2Example6">
+                                    <input required oninput="checkPasss()" type="password" id="form2Example8" name="pass" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form2Example8">
                                         PassWord</label>
                                 </div>
+                                <div id="checkPass" class="invalid-feedback" style="display: block;margin-top: -4%"></div>
                                 <div class="form-outline mb-4">
-                                    <input oninput="checkPass()" type="password" id="form2Example6" name="repass" class="form-control form-control-lg" />
-                                    <%--                                    <small style="color: red" id="checkPass"></small>--%>
-                                    <label class="form-label" for="form2Example6">
+                                    <input required oninput="checkReRePasse()" type="password" id="form2Example9" name="repass" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form2Example9">
                                          Re-PassWord</label>
+                                </div>
+                                <div id="checkRePass" class="invalid-feedback" style="display: block;margin-top: -4%"></div>
+                                <div  hidden class="form-outline mb-4">
+                                    <input required value="2" type="password" id="form2Example6" name="role" class="form-control form-control-lg" />
+                                    <%--                                    <small style="color: red" id="checkPass"></small>--%>
                                 </div>
                                 <div class="pt-1 mb-4">
                                     <button class="btn btn-secondary btn-lg btn-block" type="submit">Sign Up</button>
                                 </div>
-                                <c:if test="${checkSign}">
-                                    <h3 style="color: red">Sign Up Success </h3>
-                                </c:if>
-                                <!-- Register buttons -->
+
+                                <!--Register buttons -->
 
                             </form>
+                                <c:if test="${requestScope.checkSign}">
+                                    <h3 style="color:blue">Sign Up Success</h3>
+                                </c:if>
+                                <h5 style="color:red;">${mess}</h5>
+                                <h5  style="color:red;">${usernames}</h5>
                                 <p class="mb-5 pb-lg-2" style="color: #393f81;">Do you already have an account ?<a href="/login.jsp" style="color: red;"> Login here</a></p>
                                 <div class="text-center">
                                     <p>or sign up with:</p>
@@ -132,52 +138,43 @@
 <!-- Section: Design Block -->
 <!-- Section: Design Block -->
 <script>
-    function checkName() {
-        let name = document.getElementById("form6Example3").value;
-        let regexName = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
-        if (regexName.test(name)) {
-            document.getElementById("checkName").innerText = "";
-        } else {
-            document.getElementById("checkName").innerText = "The Name is not in the correct format";
-        }
-    }
-    function checkPhone(){
-        let phone=document.getElementById("form6Example4").value;
-        let regexPhone=/^((\+84)|0)[0-9]{9}$/;
-        if (regexPhone.test(phone)){
-            document.getElementById("checkPhone").innerText="";
-        }else {
-            document.getElementById("checkPhone").innerText="The Phone Number is not in the correct format";
-        }
-    }
-    function checkEmail() {
-        let email = document.getElementById("form6Example6").value;
-        let regexName = /^[a-z]\w{5,}\@[a-z]{3,5}\.[a-z]{2,5}$/;
-        if (regexName.test(email)) {
-            document.getElementById("checkEmail").innerText = "";
-        } else {
-            document.getElementById("checkEmail").innerText = "The Email is not in the correct format";
-        }
-    }
 
-    function checkUser() {
-        let email = document.getElementById("form6Example7").value;
-        let regexName = /^[a-z]\w{5,}\@[a-z]{3,5}\.[a-z]{2,5}$/;
-        if (regexName.test(email)) {
+
+    function checkUsere() {
+        let user = document.getElementById("form2Example7").value;
+        let regexName = /^(?=.*[A-Za-z])(?=.*)[A-Za-z\d]{6,50}$/;
+        if (regexName.test(user)) {
             document.getElementById("checkUser").innerText = "";
         } else {
-            document.getElementById("checkUser").innerText = "The Account Email is not in the correct format";
+            document.getElementById("checkUser").innerText = "The Account  is not in the correct format";
+        }}
+    // KT PASS có ít nhất 6 kí tự tỏng đó có 1 chữ cái và số
+
+        function checkPasss() {
+            let email = document.getElementById("form2Example8").value;
+            let regexName =  /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+            if (regexName.test(email)) {
+                document.getElementById("checkPass").innerText = "";
+            } else {
+                document.getElementById("checkPass").innerText = "The Pass Word is not in the correct format";
+            }
+    }
+    function checkReRePasse() {
+        let re = document.getElementById("form2Example9").value;
+        let regexName = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        if (regexName.test(re)) {
+            document.getElementById("checkRePass").innerText = "";
+        } else {
+            document.getElementById("checkRePass").innerText = "The Re Pass Word is not in the correct format";
         }
     }
-    // KT PASS có ít nhất 6 kí tự tỏng đó có 1 chữ cái và số
-    function checkPass() {
-        let email = document.getElementById("form6Example8").value;
-        let regexName = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-        if (regexName.test(email)) {
-            document.getElementById("checkPass").innerText = "";
-        } else {
-            document.getElementById("checkPass").innerText = "The Pass Word is not in the correct format";
-        }
+    function check(){
+        if (email===re){
+            document.getElementById("RePass").innerText="";
+        }else
+            document.getElementById("checkRePass").innerText = "not the same as the password";
+    } {
+
     }
 
 </script>

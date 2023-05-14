@@ -24,10 +24,10 @@
           rel="stylesheet"/>
     <link rel="stylesheet" href="dropdown.css">
 </head>
-<header style="position: fixed;top:0;left: 0;right: 0;z-index: 2; ">
+<header style=";top:0;left: 0;right: 0;z-index:2 ">
     <nav style="background-color: black" class="navbar navbar-expand-lg navbar-dark ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img style="height: 70px" width="55px"
+            <a class="navbar-brand" href="/index.jsp"><img style="height: 70px" width="55px"
                                                   src="https://www.nicepng.com/png/full/187-1876780_alienware-icon-rtm-notebookreview-alienware-start-button-png.png"
                                                   class="rounded mx-auto d-block" alt="..."></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -40,7 +40,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Gaming Lap</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="/Product?action=allProductList">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Deals</a>

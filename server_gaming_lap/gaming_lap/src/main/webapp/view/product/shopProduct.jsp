@@ -49,20 +49,20 @@
                     </li>
                 </ul>
 
-                <div class="dropdown">
+                <div class="dropdown" >
                     <button style="color: white; font-size: 15px;margin-left: -50% " type="button" class="btn  "
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                            data-bs-toggle="dropdown" aria-expanded="false" >
                         <div class="ml-5">
                             <span class=" text-white">
-                                 <%=session.getAttribute("user") != null ? ((Account) session.getAttribute("user")).getUser() : ""%>
+                                 <%=session.getAttribute("user") != null ? ((Account) session.getAttribute("user")).getUser() :""%>
                             </span>
                         </div>
                     </button>
-                    <%--                    <div class="dropdown-content" style="margin-left: -90%">--%>
-                    <%--                        <a class="dropdown-item" href="" style="font-size: 20px">--%>
-                    <%--                            <i class="fa-solid fa-user fa-beat-fade"></i> My Account</a>--%>
-                    <%--                        <%=session.getAttribute("user") == null ?(""):("<a href='/logout'><i class=\"fa-solid fa-right-from-bracket fa-beat-fade\"></i> Log out</a>")%>--%>
-                    <%--                    </div>--%>
+<%--                    <div class="dropdown-content" style="margin-left: -90%">--%>
+<%--                        <a class="dropdown-item" href="" style="font-size: 20px">--%>
+<%--                            <i class="fa-solid fa-user fa-beat-fade"></i> My Account</a>--%>
+<%--                        <%=session.getAttribute("user") == null ?(""):("<a href='/logout'><i class=\"fa-solid fa-right-from-bracket fa-beat-fade\"></i> Log out</a>")%>--%>
+<%--                    </div>--%>
                 </div>
 
 
@@ -117,23 +117,23 @@
         <!-- Container wrapper -->
     </nav>
 </div>
-<h3 style="color:red;text-align: center">${order}Successful purchase</h3>
+<h3  style="color:red;text-align: center">${order}Successful purchase</h3>
 <div class="row" style="margin-top: 5%;">
     <div class="col-sm-6">
-        <div class="card " style="margin-left: 20%">
+        <div class="" style="margin-left: 20%">
             <div class="card-body">
+
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="card">
+                        <div class="">
                             <div class="card-body">
-                                <div><img width="100%"
-                                          src="https://i.dell.com/is/image/DellContent/content/dam/documents-and-videos/dv2/csbg/en/product-launch/alienware/alienware-x14-r2-gaming-notebook-intel/site-banners/cs2304g0003-616598-gl-cs-co-fy24q2-site-banner-aw-x14-r2-laptop-800x620-right.png?fmt=png-alpha&wid=800&hei=620"
-                                          class="rounded float-start" alt="..."></div>
+                                <div ><img width="100%"  src="https://i.dell.com/is/image/DellContent/content/dam/documents-and-videos/dv2/csbg/en/product-launch/alienware/alienware-x14-r2-gaming-notebook-intel/site-banners/cs2304g0003-616598-gl-cs-co-fy24q2-site-banner-aw-x14-r2-laptop-800x620-right.png?fmt=png-alpha&wid=800&hei=620" class="rounded float-start" alt="..."></div>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6" style="">
-                        <div class=" card">
+                        <div class=" ">
                             <div class="card-body">
                                 <div style="height: 100px" class="row">
                                     <h2>${name}</h2>
@@ -160,7 +160,12 @@
                                             <td>Price</td>
                                             <td>$${price}</td>
                                         </tr>
+
                                     </table>
+                                    <div class="form-outline mb-4">
+                                        <input type="number" id="quantity" name="quantity" min="1" max="100" class="form-control form-control-lg" />
+                                        <label class="form-label">Quantity</label>
+                                    </div>
                                     <%--                    <ul>--%>
                                     <%--                        <li>ID: ${id}</li>--%>
                                     <%--                        <li>Brand: ${brand}</li>--%>
@@ -204,14 +209,14 @@
                         <label class="form-label" for="form6Example6">Email</label>
                     </div>
                     <div class="form-outline mb-4">
-                        <input type="text" id="product" name="product"
+                        <input   type="text" id="product" name="product"
                                class="form-control"/>
-                        <%--                        <small style="color: red" id="checkEmail"></small>--%>
+<%--                        <small style="color: red" id="checkEmail"></small>--%>
                         <label class="form-label" for="product">ID Product</label>
                     </div>
                     <div class="form-outline mb-4">
-                        <input type="text" id="quantity1" name="quantity1"
-                               class="form-control"/>
+                        <input   type="text" id="quantity1" name="quantity1"
+                                 class="form-control"/>
                         <%--                        <small style="color: red" id="checkEmail"></small>--%>
                         <label class="form-label" for="quantity1">Quantity</label>
                     </div>
@@ -228,27 +233,25 @@
                     <button type="submit" class="btn btn-success btn-block mb-4">ORDER</button>
                 </form>
             </div>
-            <button type="button " onclick="window.location.href='/Product?action=allProductList'"
-                    class="btn btn-dark btn-block mb-4">BACK
-            </button>
+            <button type="button " onclick="window.location.href='/Product?action=allProductList'" class="btn btn-dark btn-block mb-4">BACK</button>
 
         </div>
     </div>
 </div>
-    <%--<div class="card">--%>
-    <%--    <div class="card-header" style="text-align: center">Description</div>--%>
-    <%--    <div class="card-body">--%>
-    <%--        <blockquote class="blockquote mb-0">--%>
-    <%--            <p> ${description}</p>--%>
-    <%--        </blockquote>--%>
-    <%--    </div>--%>
-    <%--</div>--%>
+<%--<div class="card">--%>
+<%--    <div class="card-header" style="text-align: center">Description</div>--%>
+<%--    <div class="card-body">--%>
+<%--        <blockquote class="blockquote mb-0">--%>
+<%--            <p> ${description}</p>--%>
+<%--        </blockquote>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
-    <%--<c:forEach var="product" items="${allProductList}">--%>
+<%--<c:forEach var="product" items="${allProductList}">--%>
 
-    <%--</c:forEach>--%>
-    <jsp:include page="/footer_admin.jsp"></jsp:include>
-    </body>
+<%--</c:forEach>--%>
+<jsp:include page="/footer_admin.jsp"></jsp:include>
+</body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

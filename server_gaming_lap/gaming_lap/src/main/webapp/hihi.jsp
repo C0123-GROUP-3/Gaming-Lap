@@ -49,12 +49,12 @@
                     </li>
                 </ul>
 
-                <div class="dropdown">
+                <div class="dropdown" >
                     <button style="color: white; font-size: 15px;margin-left: -50% " type="button" class="btn  "
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                            data-bs-toggle="dropdown" aria-expanded="false" >
                         <div class="ml-5">
                             <span class=" text-white">
-                                 <%=session.getAttribute("user") != null ? ((Account) session.getAttribute("user")).getUser() : ""%>
+                                 <%=session.getAttribute("user") != null ? ((Account) session.getAttribute("user")).getUser() :""%>
                             </span>
                         </div>
                     </button>
@@ -70,76 +70,79 @@
         </div>
     </nav>
 </header>
-<div style="position: sticky; top:0;z-index: 2">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-            <!-- Toggle button -->
-            <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarCenteredExample"
-                    aria-controls="navbarCenteredExample"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+<%--<div style="position: sticky; top:0;z-index: 2">--%>
+<%--    <nav class="navbar navbar-expand-lg navbar-light bg-light">--%>
+<%--        <!-- Container wrapper -->--%>
+<%--        <div class="container-fluid">--%>
+<%--            <!-- Toggle button -->--%>
+<%--            <button--%>
+<%--                    class="navbar-toggler"--%>
+<%--                    type="button"--%>
+<%--                    data-mdb-toggle="collapse"--%>
+<%--                    data-mdb-target="#navbarCenteredExample"--%>
+<%--                    aria-controls="navbarCenteredExample"--%>
+<%--                    aria-expanded="false"--%>
+<%--                    aria-label="Toggle navigation"--%>
+<%--            >--%>
+<%--                <i class="fas fa-bars"></i>--%>
+<%--            </button>--%>
 
-            <!-- Collapsible wrapper -->
-            <div
-                    class="collapse navbar-collapse justify-content-center"
-                    id="navbarCenteredExample"
-            >
-                <!-- Left links -->
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Product?action=laptopList">Laptop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Product?action=keyboardList">Keyboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                           href="/Product?action=headphoneList">Headphone</a>
-                    </li>
-                    <!-- Navbar dropdown -->
+<%--            <!-- Collapsible wrapper -->--%>
+<%--            <div--%>
+<%--                    class="collapse navbar-collapse justify-content-center"--%>
+<%--                    id="navbarCenteredExample"--%>
+<%--            >--%>
+<%--                <!-- Left links -->--%>
+<%--                <ul class="navbar-nav mb-2 mb-lg-0">--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page" href="/Product?action=laptopList">Laptop</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page" href="/Product?action=keyboardList">Keyboard</a>--%>
+<%--                    </li>--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page"--%>
+<%--                           href="/Product?action=headphoneList">Headphone</a>--%>
+<%--                    </li>--%>
+<%--                    <!-- Navbar dropdown -->--%>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/Product?action=mouseList">Mouse</a>
-                    </li>
-                </ul>
-                <!-- Left links -->
-            </div>
-            <!-- Collapsible wrapper -->
-        </div>
-        <!-- Container wrapper -->
-    </nav>
-</div>
-<h3 style="color:red;text-align: center">${order}Successful purchase</h3>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link active" aria-current="page" href="/Product?action=mouseList">Mouse</a>--%>
+<%--                    </li>--%>
+<%--                </ul>--%>
+<%--                <!-- Left links -->--%>
+<%--            </div>--%>
+<%--            <!-- Collapsible wrapper -->--%>
+<%--        </div>--%>
+<%--        <!-- Container wrapper -->--%>
+<%--    </nav>--%>
+<%--</div>--%>
+<%--<h3  style="color:red;text-align: center">${order}Successful purchase</h3>--%>
 <div class="row" style="margin-top: 5%;">
     <div class="col-sm-6">
-        <div class="card " style="margin-left: 20%">
-            <div class="card-body">
-                <div class="row">
+        <div class="card" style="margin-left: 20%;margin-top: -10%">
+            <div class="card-body" >
+<%--<c:forEach var="product" items="${allProductList}">--%>
+                <div class="row" >
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <div><img width="100%"
-                                          src="https://i.dell.com/is/image/DellContent/content/dam/documents-and-videos/dv2/csbg/en/product-launch/alienware/alienware-x14-r2-gaming-notebook-intel/site-banners/cs2304g0003-616598-gl-cs-co-fy24q2-site-banner-aw-x14-r2-laptop-800x620-right.png?fmt=png-alpha&wid=800&hei=620"
-                                          class="rounded float-start" alt="..."></div>
+                                <div ><img width="100%"  src="https://i.dell.com/is/image/DellContent/content/dam/documents-and-videos/dv2/csbg/en/product-launch/alienware/alienware-x14-r2-gaming-notebook-intel/site-banners/cs2304g0003-616598-gl-cs-co-fy24q2-site-banner-aw-x14-r2-laptop-800x620-right.png?fmt=png-alpha&wid=800&hei=620" class="rounded float-start" alt="..."></div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6" style="">
-                        <div class=" card">
-                            <div class="card-body">
-                                <div style="height: 100px" class="row">
-                                    <h2>${name}</h2>
+                    <div class="col-sm-6" >
+                        <div class="card ">
+                            <div class="card-body" >
+                                <div style="" class="row">
                                 </div>
                                 <div style="height: auto" class="row">
                                     <table class="table table-borderless">
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>${name}</td>
+                                        </tr>
                                         <tr>
                                             <td>ID</td>
                                             <td>${id}</td>
@@ -160,6 +163,12 @@
                                             <td>Price</td>
                                             <td>$${price}</td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <button  type="button" class="btn btn-danger" style="margin-left: 30%">DELETE</button>
+                                                </td>
+                                        </tr>
+
                                     </table>
                                     <%--                    <ul>--%>
                                     <%--                        <li>ID: ${id}</li>--%>
@@ -173,45 +182,32 @@
                         </div>
                     </div>
                 </div>
+<%--    </c:forEach>--%>
             </div>
         </div>
     </div>
-    <div class="col-sm-6" style="width: 30%;margin-left: 10%;margin-top: -5%">
+    <div class="col-sm-6" style="width: 30%;margin-left: 10%;margin-top: 5%">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title" style="text-align: center">Special title treatment</h5>
                 <form action="/customer?action=create" method="post" class="text_left">
+                    <div class="form-outline mb-4">
+                        <input required oninput="checkPhone()" type="text" id="form6Example4" name="phone"
+                               class="form-control"/>
+                        <small style="color: red" id="checkPhone"></small>
+                        <label class="form-label" for="form6Example4">Id</label>
+                    </div>
                     <div class="form-outline mb-4">
                         <input required oninput="checkName()" type="text" id="form6Example3" name="name"
                                class="form-control "/>
                         <small style="color: red" id="checkName"></small>
                         <label class="form-label" for="form6Example3">Name</label>
                     </div>
+
+
                     <div class="form-outline mb-4">
-                        <input required oninput="checkPhone()" type="text" id="form6Example4" name="phone"
-                               class="form-control"/>
-                        <small style="color: red" id="checkPhone"></small>
-                        <label class="form-label" for="form6Example4">Phone Number</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input required type="text" id="form6Example5" name="address" class="form-control"/>
-                        <label class="form-label" for="form6Example5">Address</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input required oninput="checkEmail()" type="text" id="form6Example6" name="email"
-                               class="form-control"/>
-                        <small style="color: red" id="checkEmail"></small>
-                        <label class="form-label" for="form6Example6">Email</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input type="text" id="product" name="product"
-                               class="form-control"/>
-                        <%--                        <small style="color: red" id="checkEmail"></small>--%>
-                        <label class="form-label" for="product">ID Product</label>
-                    </div>
-                    <div class="form-outline mb-4">
-                        <input type="text" id="quantity1" name="quantity1"
-                               class="form-control"/>
+                        <input   type="text" id="quantity1" name="quantity1"
+                                 class="form-control"/>
                         <%--                        <small style="color: red" id="checkEmail"></small>--%>
                         <label class="form-label" for="quantity1">Quantity</label>
                     </div>
@@ -225,30 +221,28 @@
                     <%--            <small style="color: red" id="checkPass"></small>--%>
                     <%--            <label class="form-label" for="form6Example8">PassWord</label>--%>
                     <%--        </div>--%>
-                    <button type="submit" class="btn btn-success btn-block mb-4">ORDER</button>
+                    <button type="submit" class="btn btn-success btn-block mb-4">EDIT</button>
                 </form>
             </div>
-            <button type="button " onclick="window.location.href='/Product?action=allProductList'"
-                    class="btn btn-dark btn-block mb-4">BACK
-            </button>
+<%--            <button type="button " onclick="window.location.href='/Product?action=allProductList'" class="btn btn-dark btn-block mb-4">BACK</button>--%>
 
         </div>
     </div>
 </div>
-    <%--<div class="card">--%>
-    <%--    <div class="card-header" style="text-align: center">Description</div>--%>
-    <%--    <div class="card-body">--%>
-    <%--        <blockquote class="blockquote mb-0">--%>
-    <%--            <p> ${description}</p>--%>
-    <%--        </blockquote>--%>
-    <%--    </div>--%>
-    <%--</div>--%>
+<%--<div class="card">--%>
+<%--    <div class="card-header" style="text-align: center">Description</div>--%>
+<%--    <div class="card-body">--%>
+<%--        <blockquote class="blockquote mb-0">--%>
+<%--            <p> ${description}</p>--%>
+<%--        </blockquote>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
-    <%--<c:forEach var="product" items="${allProductList}">--%>
+<%--<c:forEach var="product" items="${allProductList}">--%>
 
-    <%--</c:forEach>--%>
-    <jsp:include page="/footer_admin.jsp"></jsp:include>
-    </body>
+<%--</c:forEach>--%>
+<jsp:include page="/footer_admin.jsp"></jsp:include>
+</body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
