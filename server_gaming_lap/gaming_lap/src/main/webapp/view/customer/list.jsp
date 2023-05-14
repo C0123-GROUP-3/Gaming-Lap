@@ -50,7 +50,7 @@
 
     </div>
 </nav>
-<h1 style="text-align: center;">Customer Management</h1>
+<h1 style="text-align: center;margin-top: 2%">Customer Management</h1>
 <table id="tableCustomer" class="table table-striped table- bordered" style="width: 100%">
     <thead>
     <tr>

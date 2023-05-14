@@ -57,7 +57,7 @@ public class CustomerServlet extends HttpServlet {
                 request.setAttribute("phone", customerList.get(i).getPhone());
                 request.setAttribute("address", customerList.get(i).getAddress());
                 request.setAttribute("email", customerList.get(i).getEmail());
-                request.getRequestDispatcher("/view/customer/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("/view/customer/detail.jsp").forward(request, response);
                 break;
             }
         }

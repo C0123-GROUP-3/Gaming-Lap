@@ -72,7 +72,7 @@
 
             <input style="width: 30vw" class="form-control me-2" type="text" name="search"
                    placeholder="Search" aria-label="Search" value="${search}">
-            <button class="btn btn-secondary" type="submit">Search</button>
+            <button class="btn btn-primary" type="submit">Search</button>
         </form>
 
     </div>
