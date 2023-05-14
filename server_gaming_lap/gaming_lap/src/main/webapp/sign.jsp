@@ -104,8 +104,8 @@
                                 <c:if test="${requestScope.checkSign}">
                                     <h3 style="color:blue">Sign Up Success</h3>
                                 </c:if>
-                                <h5 style="color:red;">${mess}</h5>
-                                <h5  style="color:red;">${usernames}</h5>
+                                <h6 style="color:red;">${mess}</h6>
+                                <h6  style="color:red;">${usernames}</h6>
                                 <p class="mb-5 pb-lg-2" style="color: #393f81;">Do you already have an account ?<a href="/login.jsp" style="color: red;"> Login here</a></p>
                                 <div class="text-center">
                                     <p>or sign up with:</p>
@@ -135,7 +135,6 @@
     </div>
     <!-- Jumbotron -->
 </section>
-
 <!-- Section: Design Block -->
 <!-- Section: Design Block -->
 <script>
