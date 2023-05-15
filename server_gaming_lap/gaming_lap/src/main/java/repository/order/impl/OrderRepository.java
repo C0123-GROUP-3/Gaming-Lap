@@ -21,7 +21,6 @@ public class OrderRepository implements IOrderRepository {
     private static final String GET_LIST_CUSTOMER = "SELECT id, `name`, phone FROM customer;";
     private static final String GET_CUSTOMER_BY_ID = "SELECT id, `name` AS name, phone FROM customer WHERE id = ?;";
     private static final String GET_LIST_PRODUCT = "SELECT id, name, price FROM product;";
-    private static final String GET_LIST_ORDER_ORDER_BY_DATE = "SELECT o.*, c.id AS c_id,c.`name` AS c_name, c.phone AS c_phone, p.id AS p_id, p.name AS p_name FROM `order` AS o\nLEFT JOIN customer AS c ON o.id_customer = c.id\nLEFT JOIN product AS p ON o.id_product = p.id ORDER BY o.order_date;";
     private static final String INSERT_ORDER = "INSERT INTO `order`(id_customer) VALUES (?);";
     private static final String INSERT_ORDER_DETAIL = "INSERT INTO order_detail (id_order,id_product,quantity_product) VALUES (?,?,?);";
     private static final String GET_ORDER = "SELECT id FROM `order` ORDER BY id DESC LIMIT 1;";
