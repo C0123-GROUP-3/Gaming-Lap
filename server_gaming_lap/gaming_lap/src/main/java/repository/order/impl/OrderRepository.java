@@ -16,12 +16,11 @@ import java.util.List;
 
 public class OrderRepository implements IOrderRepository {
     private static final String GET_LIST_ORDER = "SELECT od.id_order ,c.id AS c_id, c.`name` AS c_name,c.phone AS c_phone, o.create_time AS create_time, o.update_time AS update_time,SUM(p.price*od.quantity_product) AS total_price, o.status AS status FROM `order` AS o INNER JOIN order_detail AS od ON o.id = od.id_order INNER JOIN  product AS p ON od.id_product = p.id INNER JOIN customer AS c ON o.id_customer = c.id GROUP BY od.id_order HAVING status = ? ORDER BY o.id;";
-    private static final String SEARCH_ORDER_BY_PHONE_CUSTOMER = "SELECT od.id_order AS id,c.id AS c_id, c.`name` AS c_name,c.phone AS c_phone, o.create_time AS create_time, o.update_time AS update_time,SUM(p.price*od.quantity_product) AS total_price FROM `order` AS o INNER JOIN order_detail AS od ON o.id = od.id_order INNER JOIN  product AS p ON od.id_product = p.id INNER JOIN customer AS c ON o.id_customer = c.id WHERE o.id LIKE ? AND c.phone LIKE ? GROUP BY od.id_order ORDER BY o.id;";
+    private static final String SEARCH_ORDER = "SELECT od.id_order AS id_order,c.id AS c_id, c.`name` AS c_name,c.phone AS c_phone, o.create_time AS create_time, o.update_time AS update_time,SUM(p.price*od.quantity_product) AS total_price, o.status AS status  FROM `order` AS o INNER JOIN order_detail AS od ON o.id = od.id_order INNER JOIN  product AS p ON od.id_product = p.id INNER JOIN customer AS c ON o.id_customer = c.id WHERE o.id LIKE ? GROUP BY od.id_order HAVING c_phone LIKE ? AND status = 0 ORDER BY o.id; ";
     private static final String DELETE = "CALL delete_order(?); ";
     private static final String GET_LIST_CUSTOMER = "SELECT id, `name`, phone FROM customer;";
     private static final String GET_CUSTOMER_BY_ID = "SELECT id, `name` AS name, phone FROM customer WHERE id = ?;";
     private static final String GET_LIST_PRODUCT = "SELECT id, name, price FROM product;";
-    private static final String GET_LIST_ORDER_ORDER_BY_DATE = "SELECT o.*, c.id AS c_id,c.`name` AS c_name, c.phone AS c_phone, p.id AS p_id, p.name AS p_name FROM `order` AS o\nLEFT JOIN customer AS c ON o.id_customer = c.id\nLEFT JOIN product AS p ON o.id_product = p.id ORDER BY o.order_date;";
     private static final String INSERT_ORDER = "INSERT INTO `order`(id_customer) VALUES (?);";
     private static final String INSERT_ORDER_DETAIL = "INSERT INTO order_detail (id_order,id_product,quantity_product) VALUES (?,?,?);";
     private static final String GET_ORDER = "SELECT id FROM `order` ORDER BY id DESC LIMIT 1;";
@@ -159,17 +158,17 @@ public class OrderRepository implements IOrderRepository {
     }
 
     @Override
-    public List<Order> searchOrder(int id, String phone) {
+    public List<Order> searchOrder(String id, String phone) {
         List<Order> orderList = new ArrayList<>();
         Connection connection = BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_ORDER_BY_PHONE_CUSTOMER);
-            preparedStatement.setInt(1, '%' + id + '%');
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_ORDER);
+            preparedStatement.setString(1, '%'+id+'%' );
 //            preparedStatement.setString(2,'%' + name + '%');
             preparedStatement.setString(2, '%' + phone + '%');
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String idOrder = resultSet.getString("id");
+                String idOrder = resultSet.getString("id_order");
                 String createAt = resultSet.getString("create_time");
                 String updateAt = resultSet.getString("update_time");
                 String totalPrice = resultSet.getString("total_price");
@@ -179,7 +178,6 @@ public class OrderRepository implements IOrderRepository {
                 Customer customer = new Customer(customerId, customerName, phoneCustomer);
                 orderList.add(new Order(idOrder, customer, createAt, updateAt, totalPrice));
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

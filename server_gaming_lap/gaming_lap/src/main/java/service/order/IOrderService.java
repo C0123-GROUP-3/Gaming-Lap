@@ -26,7 +26,7 @@ public interface IOrderService {
 
     List<Order> getOrder();
 
-    List<Order> searchOrder(int id, String phone);
+    List<Order> searchOrder(String id, String phone);
 
     List<Order> getInfoOrderById(int id);
 

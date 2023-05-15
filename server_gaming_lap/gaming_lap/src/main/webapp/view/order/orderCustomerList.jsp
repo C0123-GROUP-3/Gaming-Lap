@@ -32,9 +32,9 @@
                 <button  class="btn" style="border: 1px solid #DDDDDD"
                         onclick="window.location.href='/OrderCustomerServlet'">Back
                 </button>
-                <form hidden action="/customer?action=sort" method="post" style="margin-left: 20px">
-                                <button class="btn" style="border: 1px solid #DDDDDD" type="button">Sort By Name</button>
-                </form>
+<%--                <form hidden action="/customer?action=sort" method="post" style="margin-left: 20px">--%>
+<%--                                <button class="btn" style="border: 1px solid #DDDDDD" type="button">Sort By Name</button>--%>
+<%--                </form>--%>
             </div>
         </div>
         <%--        <form class="d-flex" action="/OrderServlet?action=search" method="post">--%>
@@ -53,7 +53,7 @@
             <input style="width: 20vw" class="form-control me-2" type="search" maxlength="10" name="phone"
                    value="${phone}"
                    placeholder="Search by phone number" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">Search</button>
+            <button class="btn btn-primary" type="submit">Search</button>
         </form>
     </div>
 </nav>
@@ -83,7 +83,7 @@
             <td>${customerList.getUpdateTime()}</td>
             <td colspan="1">
                 <form action="/OrderServlet?action=create&id=${customerList.id}" method="post">
-                    <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn btn-primary">
                         Select
                     </button>
                 </form>

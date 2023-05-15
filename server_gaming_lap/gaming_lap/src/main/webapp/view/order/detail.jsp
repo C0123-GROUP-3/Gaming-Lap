@@ -165,9 +165,9 @@
                 <h1>Order Information</h1>
             </div>
             <%--            style="margin-left: 25%"--%>
-            <div class="row" style="margin-left: 29%">
+            <div class="row" style="justify-content: center; margin-left: 2px">
                 <div class="col-lg-8 col-md-10 col-sm-12">
-                    <div class="card" style="width: 23rem;">
+                    <div class="card" style="width: 36rem;">
                         <c:forEach items="${orderList}" var="orderList">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">ID Order: ${orderList.id}</li>
