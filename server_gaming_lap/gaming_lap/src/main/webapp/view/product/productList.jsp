@@ -12,23 +12,23 @@
     <title>Product List</title>
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<!-- Font Awesome -->
-<link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
-        rel="stylesheet"
-/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+            rel="stylesheet"
+    />
 </head>
 <style>
     th{
@@ -78,7 +78,7 @@
     </div>
 </nav>
 
-<h1 style="margin-top: 40px;text-align: center;">Product Management</h1>
+<h1 style="text-align: center;">Product Management</h1>
 
 <table id="tableProduct" class="table table-striped">
     <thead>
@@ -92,7 +92,8 @@
         <th>Update time</th>
         <th>Type of product</th>
         <th>Image</th>
-        <th colspan="2">Action</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -109,12 +110,12 @@
             <td><img class="img-product" src="${product.image}" alt=""></td>
             <th>
                 <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-warning">Edit</button>
-<%--                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">--%>
+                    <%--                <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">--%>
 
                 </button>
             </th>
             <th>
-<%--                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-primary">Edit</button>--%>
+                    <%--                <button onclick="window.location.href = '/Product?action=edit&id=${product.id}'" class="btn btn-primary">Edit</button>--%>
                 <button onclick="inforDelete('${product.id}','${product.name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Delete
                 </button>
@@ -136,15 +137,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="/Product?action=delete" method="post">
-                                <div class="modal-body">
-                                    <input  hidden id="deleteId" name="deleteId">
-                                    <span>Are you sure to delete </span> <span style="color: red" id="deleteName"></span> <span>?</span>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Delete</button>
-                                </div>
-                            </form>
+                <div class="modal-body">
+                    <input  hidden id="deleteId" name="deleteId">
+                    <span>Are you sure to delete </span> <span style="color: red" id="deleteName"></span> <span>?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -77,7 +77,27 @@
             <textarea name="description" class="form-control" id="form6Example7" rows="4"></textarea>
             <label class="form-label" for="form6Example7">Additional description</label>
         </div>
-        <button type="submit" class="btn btn-dark btn-block mb-4">Create</button>
+        <button type="button" class="btn btn-dark btn-block mb-4 " data-bs-toggle="modal" data-bs-target="#exampleModal">Create</button>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Create new product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure to add this product?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </form>
 </div>
@@ -95,14 +115,14 @@
 </body>
 </html>
 
-<script>
-    let check = ${check};
-    if (check===true){
-        alert("ADDED SUCCESSFULLY");
-    }else {
-        alert("CAN'T ADD THIS PRODUCT");
-    }
-</script>
+<%--<script>--%>
+<%--    let check = ${check};--%>
+<%--    if (check===true){--%>
+<%--        alert("ADDED SUCCESSFULLY");--%>
+<%--    }else {--%>
+<%--        alert("CAN'T ADD THIS PRODUCT");--%>
+<%--    }--%>
+<%--</script>--%>
 
 
 
